@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <!--
 Program name: homework2thankyou.html
 Author: Christian Loup
@@ -7,6 +6,7 @@ Date last edited: 10-15-2024
 Version: 1.00
 Description: patient-form submit confirmation.
 -->
+<!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">   
 <title>Patient Form</title>
 <link rel="stylesheet" href="style.css">
