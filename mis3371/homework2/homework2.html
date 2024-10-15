@@ -47,17 +47,17 @@ Description: patient registration form.
                 </tr>
                 <tr style="height:10px">
                     <td>Address 1*:</td>
-                    <td><input type="text" id="address1" name="address1" size="30" maxlength="30" required></td>
+                    <td><input type="text" id="address1" name="address1" size="30" minlength="2" maxlength="30" required title="2-30 characters"></td>
                 </tr>
                 <tr style="height:10px">
                     <td>Address 2:</td>
-                    <td><input type="text" id="address2" name="address2" size="30" maxlength="30"></td>
+                    <td><input type="text" id="address2" name="address2" size="30" minlength="2" maxlength="30" title="2-30 characters"></td>
                 </tr>
                 <tr>
                     <td>City*:</td>
-                    <td><input type="text" id="city" name="city" size="30" maxlength="30" required></td>
+                    <td><input type="text" id="city" name="city" size="30" minlength="2" maxlength="30" required title="2-30 characters"></td>
                     <td>State*:</td>
-                    <td><select required>
+                    <td><select required title="select your state">
                         <option selected disabled></option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
