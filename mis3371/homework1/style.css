@@ -1,0 +1,68 @@
+/*
+Program name: style.css
+Author: Christian Loup
+Date created: 9-11-2024
+Date last edited: 9-19-2024
+Version: 1.17
+Description: style sheet for patient-form.
+*/
+body {
+    background-color: rgb(158, 134, 219);
+}
+
+table.header {
+    color: darkred;
+    text-align: center;
+    font-family: Lucida Handwriting, cursive;
+    font-size: xx-large;
+    border-bottom: 3px double lightgray;
+}
+
+table.body {
+    width: 50%;
+    color: rgb(18, 18, 172);
+    text-align: left;
+    font-family: Helvetica, sans-serif;
+    margin-left: 50px;
+    border: 2px solid black;
+    border-spacing: 15px;
+    background-color: lightgray;
+}
+
+table.footer {
+    color: darkred;
+    text-align: left;
+    font-family: Helvetica, sans-serif;
+    font-size: small;
+    border-top: 3px double lightgray;
+    width: 100%;
+}
+
+th {
+    background-color: aqua;
+    color: rgb(178, 96, 255);
+    text-align: center;
+    font-family: Copperplate, fantasy;
+    font-size: xx-large;
+    border-bottom: 2px solid black;
+}
+
+tr {
+    height: 60px;
+}
+
+td {
+    width: 13%;
+}
+
+a:link {
+  color: orange;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
