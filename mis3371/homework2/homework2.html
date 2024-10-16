@@ -3,7 +3,7 @@ Program name: homework2.html
 Author: Christian Loup
 Date created: 10-15-2024
 Date last edited: 10-15-2024
-Version: 1.00
+Version: 1.17
 Description: patient registration form.
 -->
 <!DOCTYPE html>
@@ -185,7 +185,7 @@ Description: patient registration form.
                 </tr>
                 <tr style="height:10px">
                     <td>Create Password*:</td>
-                    <td><input type="password" id="password" name="password" size="30" minlength="8" maxlength="30" required title="8-30 characters. must contain at least 1 upper case latter, 1 number and 1 special character"></td>
+                    <td><input type="password" id="password" name="password" size="30" minlength="8" maxlength="30" required title="8-30 characters. must contain at least 1 upper case letter, 1 lower case letter, 1 number and 1 special character. do not include parts of your username or name" pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*\(\)\-_+=\\\/><.,`~])(?!.*\x22).{8,30}" oninvalid="alert('You must fill out the form!');"></td>
                 </tr>
                 <tr style="height:10px">
                     <td>Re-enter Password*:</td>
