@@ -3,7 +3,7 @@ Program name: homework2.html
 Author: Christian Loup
 Date created: 10-15-2024
 Date last edited: 10-15-2024
-Version: 1.22
+Version: 1.23
 Description: patient registration form.
 -->
 <!DOCTYPE html>
@@ -43,19 +43,19 @@ Description: patient registration form.
                 </tr>
                 <tr>
                     <td>Social Security*:</td>
-                    <td><input type="password" id="ss" name="ss" size="11" minlength="9" maxlength="11" required title="9-11 numbers" pattern="[0-9]{9,11}" oninvalid="alert('You must fill out the form!');"></td>
+                    <td><input type="password" id="ss" name="ss" size="11" minlength="9" maxlength="11" required title="9-11 numbers" pattern="[0-9]{9,11}" oninvalid="alert('social security invalid');"></td>
                 </tr>
                 <tr style="height:10px">
                     <td>Address 1*:</td>
-                    <td><input type="text" id="address1" name="address1" size="30" minlength="2" maxlength="30" required title="2-30 characters" pattern="[A-Za-z0-9'\-]{2,30}" oninvalid="alert('You must fill out the form!');"></td>
+                    <td><input type="text" id="address1" name="address1" size="30" minlength="2" maxlength="30" required title="2-30 characters" pattern="[A-Za-z0-9'\-]{2,30}" oninvalid="alert('address 1 invalid');"></td>
                 </tr>
                 <tr style="height:10px">
                     <td>Address 2:</td>
-                    <td><input type="text" id="address2" name="address2" size="30" minlength="2" maxlength="30" title="2-30 characters" pattern="[A-Za-z0-9'\-]{2,30}" oninvalid="alert('You must fill out the form!');"></td>
+                    <td><input type="text" id="address2" name="address2" size="30" minlength="2" maxlength="30" title="2-30 characters" pattern="[A-Za-z0-9'\-]{2,30}" oninvalid="alert('address 2 invalid');"></td>
                 </tr>
                 <tr>
                     <td>City*:</td>
-                    <td><input type="text" id="city" name="city" size="30" minlength="2" maxlength="30" required title="2-30 characters" pattern="[A-Za-z]{2,30}" oninvalid="alert('You must fill out the form!');"></td>
+                    <td><input type="text" id="city" name="city" size="30" minlength="2" maxlength="30" required title="2-30 characters" pattern="[A-Za-z]{2,30}" oninvalid="alert('city invalid');"></td>
                     <td>State*:</td>
                     <td><select required title="select your state">
                         <option selected disabled></option>
@@ -114,15 +114,15 @@ Description: patient registration form.
                     </select></td>
 
                     <td>Zip*:</td>
-                    <td><input type="text" id="zip" name="zip" size="10" minlength="5" maxlength="10" required title="5 digits" pattern="[0-9\-]{5,10}" oninvalid="alert('You must fill out the form!');"></td>
+                    <td><input type="text" id="zip" name="zip" size="10" minlength="5" maxlength="10" required title="5 digits" pattern="[0-9\-]{5,10}" oninvalid="alert('zip invalid');"></td>
                 </tr>
                 <tr>
                     <td>Email*:</td>
-                    <td><input type="email" id="email" name="email" placeholder="name@domain.tld" required title="name@domain.tld" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" oninvalid="alert('You must fill out the form!');"></td>
+                    <td><input type="email" id="email" name="email" placeholder="name@domain.tld" required title="name@domain.tld" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" oninvalid="alert('email invalid');"></td>
                 </tr>
                 <tr>
                     <td>Phone:</td>
-                    <td><input type="text" id="phone" name="phone" placeholder="xxx-xxx-xxxx" size="14" maxlength="30" title="000-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" oninvalid="alert('You must fill out the form!');"></td>
+                    <td><input type="text" id="phone" name="phone" placeholder="xxx-xxx-xxxx" size="14" maxlength="30" title="000-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" oninvalid="alert('phone invalid');"></td>
                       
                 </tr><tr style="height:10px">
                     <td>Symptoms:</td>
@@ -152,7 +152,7 @@ Description: patient registration form.
                     <td>Gender*:</td>
                 </tr>
                 <tr style="height:10px">
-                    <td><input type="radio" id="male" name="gender" value="Male" required title="select your gender"> Male</td>
+                    <td><input type="radio" id="male" name="gender" value="Male" required title="select your gender" oninvalid="alert('select gender');"> Male</td>
                 </tr>
                 <tr style="height:10px">
                     <td><input type="radio" id="female" name="gender" value="Female" title="select your gender"> Female</td>
@@ -161,7 +161,7 @@ Description: patient registration form.
                     <td>Do you have insurance?*</td>
                 </tr>
                 <tr style="height:10px">
-                    <td><input type="radio" id="hasins" name="ins" value="Hasins" required title="select response"> Yes</td>
+                    <td><input type="radio" id="hasins" name="ins" value="Hasins" required title="select response" oninvalid="alert('select insurance status');"> Yes</td>
                 </tr>
                 <tr style="height:10px">
                     <td><input type="radio" id="noins" name="ins" value="Noins" title="select response"> No</td>
@@ -170,7 +170,7 @@ Description: patient registration form.
                     <td>Are you vaccinated?*</td>
                 </tr>
                 <tr style="height:10px">
-                    <td><input type="radio" id="yesvac" name="vac" value="Yesvac" required title="select response"> Yes</td>
+                    <td><input type="radio" id="yesvac" name="vac" value="Yesvac" required title="select response" oninvalid="alert('select vaccination status');"> Yes</td>
                 </tr>
                 <tr style="height:10px">
                     <td><input type="radio" id="novac" name="vac" value="Novac" title="select response"> No</td>
@@ -181,11 +181,11 @@ Description: patient registration form.
                 </tr>
                 <tr>
                     <td>Create User ID*:</td>
-                    <td><input type="text" id="user" name="user" size="30" minlength="5" maxlength="30" required title="5-30 characters. no spaces. only letters, numbers (as long as the first character is NOT a number), underscores or dashes" pattern="[A-Za-z_\-]{1}[A-Za-z0-9_\-]{4,29}" oninvalid="alert('You must fill out the form!');"></td>
+                    <td><input type="text" id="user" name="user" size="30" minlength="5" maxlength="30" required title="5-30 characters. no spaces. only letters, numbers (as long as the first character is NOT a number), underscores or dashes" pattern="[A-Za-z_\-]{1}[A-Za-z0-9_\-]{4,29}" oninvalid="alert('username invalid');"></td>
                 </tr>
                 <tr style="height:10px">
                     <td>Create Password*:</td>
-                    <td><input type="password" id="password" name="password" size="30" minlength="8" maxlength="30" required title="8-30 characters. must contain at least 1 upper case letter, 1 lower case letter, 1 number and 1 special character. do not include parts of your username or name" pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*\(\)\-_+=\\\/><.,`~])(?!.*\x22).{8,30}" oninvalid="alert('You must fill out the form!');"></td>
+                    <td><input type="password" id="password" name="password" size="30" minlength="8" maxlength="30" required title="8-30 characters. must contain at least 1 upper case letter, 1 lower case letter, 1 number and 1 special character. do not include parts of your username or name" pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*\(\)\-_+=\\\/><.,`~])(?!.*\x22).{8,30}" oninvalid="alert('password invalid');"></td>
                 </tr>
                 <tr style="height:10px">
                     <td>Re-enter Password*:</td>
