@@ -3,7 +3,7 @@ Program name: style.css
 Author: Christian Loup
 Date created: 10-15-2024
 Date last edited: 10-15-2024
-Version: 1.00
+Version: 1.01
 Description: style sheet for patient form.
 */
 body {
@@ -56,13 +56,17 @@ td {
 }
 
 a:link {
-  color: orange;
-  background-color: transparent;
-  text-decoration: none;
+    color: orange;
+    background-color: transparent;
+    text-decoration: none;
 }
 
 a:visited {
-  color: green;
-  background-color: transparent;
-  text-decoration: none;
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+error {
+    color: red;    
 }
