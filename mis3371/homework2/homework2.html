@@ -3,7 +3,7 @@ Program name: homework2.html
 Author: Christian Loup
 Date created: 10-15-2024
 Date last edited: 10-15-2024
-Version: 1.24
+Version: 1.26
 Description: patient registration form.
 -->
 <!DOCTYPE html>
@@ -39,7 +39,7 @@ Description: patient registration form.
                 </tr>
                 <tr>
                     <td>Date of Birth*:</td>
-                    <td><input type="date" id="bdate" name="bdate" min="1903-01-01" max="2024-10-01" required title="select your date of birth from the menu. cannot be more than 120 years ago. cannot be in the future"></td>
+                    <td><input type="date" id="bdate" name="bdate" min="1903-01-01" max="2024-10-01" required title="select your date of birth from the menu. cannot be more than 120 years ago. cannot be in the future" oninvalid="date invalid"></td>
                 </tr>
                 <tr>
                     <td>Social Security*:</td>
