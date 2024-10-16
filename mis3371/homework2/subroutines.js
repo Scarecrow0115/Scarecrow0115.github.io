@@ -23,7 +23,7 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
   const selectedDate = new Date(document.getElementById('bdate').value);
   const currentDate = new Date();
   const tooOld = new Date();
-  currentDate.setHours(0, 0, 0, 0);
+  //currentDate.setHours(0, 0, 0, 0);
   tooOld.setFullYear(currentDate.getFullYear() - 120);
 
   if (selectedDate > currentDate) {
