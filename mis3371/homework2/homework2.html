@@ -180,7 +180,7 @@ Description: patient registration form.
                     <td><input type="range" id="healthslider" name="healthslider" min="1" max="10" required title="choose response with slider" oninput="slide(this.value)"></td>
                     <td id="health">5</td>
                 </tr>
-                <tr>
+                <tr class="form" onsubmit="return handleSubmit(event);">
                     <td>Create User ID*:</td>
                     <td><input type="text" id="user" name="user" size="30" minlength="5" maxlength="30" required title="5-30 characters. no spaces. only letters, numbers (as long as the first character is NOT a number), underscores or dashes" pattern="[A-Za-z_\-]{1}[A-Za-z0-9_\-]{4,29}" oninvalid="alert('username invalid');"></td>
                 </tr>
