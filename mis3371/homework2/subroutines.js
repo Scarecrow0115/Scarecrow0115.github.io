@@ -13,8 +13,20 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
 
   if (password !== repassword) {
     pwdError.textContent = "Passwords do not match.";
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault(); // prevent submission
   } else {
-    pwdError.textContent = ""; // Clear error message
+    pwdError.textContent = ""; // clear error message
+  }
+});
+
+document.getElementById('homework2form').addEventListener('submit', function(event) {
+  const selectedDate = new Date(document.getElementById('bdate').value);
+  const currentDate = new Date();
+
+  currentDate.setHours(0, 0, 0, 0);
+
+  if (selectedDate > currentDate) {
+    alert("The selected date is in the future.");
+    event.preventDefault(); // prevent submission
   }
 });
