@@ -12,7 +12,7 @@ document.getElementById('passwordForm').addEventListener('submit', function(even
     }
 });
 */
-
+/*
 function validatePasswords() {
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
@@ -27,6 +27,25 @@ function validatePasswords() {
         confirmPasswordError.textContent = "Passwords do not match.";
     }
 }
+*/
 
 document.getElementById('password').oninput = validatePasswords;
 document.getElementById('confirmPassword').oninput = validatePasswords;
+
+function validateTextInput() {
+    const inputField = document.getElementById('textInput');
+    const inputError = document.getElementById('inputError');
+
+    // Clear previous error messages
+    inputError.textContent = "";
+
+    // Check if the input matches the pattern
+    const pattern = /^[A-Za-z]+$/; // Regex for alphabetic characters only
+
+    if (!pattern.test(inputField.value)) {
+        inputError.textContent = "Input must contain only letters.";
+    }
+}
+
+// Add event listener for real-time validation
+document.getElementById('textInput').oninput = validateTextInput;
