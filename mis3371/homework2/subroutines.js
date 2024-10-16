@@ -3,7 +3,7 @@ Program name: subroutines.js
 Author: Christian Loup
 Date created: 10-16-2024
 Date last edited: 10-16-2024
-Version: 1.02
+Version: 1.03
 Description: subroutines for patient form.
 */
 document.getElementById('homework2form').addEventListener('submit', function(event) {
@@ -26,7 +26,7 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
   currentDate.setHours(0, 0, 0, 0);
 
   if (selectedDate > currentDate) {
-    alert("The selected date is in the future.");
+    alert("Birthday can not be in the future.");
     event.preventDefault(); // prevent submission
   }
 });
