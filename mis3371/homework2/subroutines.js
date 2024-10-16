@@ -3,7 +3,7 @@ Program name: subroutines.js
 Author: Christian Loup
 Date created: 10-16-2024
 Date last edited: 10-16-2024
-Version: 1.07
+Version: 1.08
 Description: subroutines for patient form.
 */
 document.getElementById('homework2form').addEventListener('submit', function(event) {
@@ -36,4 +36,14 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
 
 function slide(value) {
   document.getElementById("health").innerHTML = value; 
+}
+
+function handleSubmit(event) {
+    event.preventDefault(); // prevent submission
+    const usernameInput = document.getElementById('username').value;
+    const lowercaseUsername = usernameInput.toLowerCase();
+
+    document.getElementById('displayUsername').textContent = lowercaseUsername;
+
+    document.getElementById('username').value = '';
 }
