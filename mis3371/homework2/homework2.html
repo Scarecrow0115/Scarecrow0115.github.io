@@ -3,7 +3,7 @@ Program name: homework2.html
 Author: Christian Loup
 Date created: 10-15-2024
 Date last edited: 10-15-2024
-Version: 1.17
+Version: 1.18
 Description: patient registration form.
 -->
 <!DOCTYPE html>
@@ -118,7 +118,7 @@ Description: patient registration form.
                 </tr>
                 <tr>
                     <td>Email*:</td>
-                    <td><input type="email" id="email" name="email" placeholder="name@domain.tld" required title="name@domain.tld" oninvalid="alert('You must fill out the form!');"></td>
+                    <td><input type="email" id="email" name="email" placeholder="name@domain.tld" required title="name@domain.tld" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" oninvalid="alert('You must fill out the form!');"></td>
                 </tr>
                 <tr>
                     <td>Phone:</td>
