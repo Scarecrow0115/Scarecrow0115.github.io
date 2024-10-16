@@ -39,23 +39,23 @@ Description: patient registration form.
                 </tr>
                 <tr>
                     <td>Date of Birth*:</td>
-                    <td><input type="date" id="bdate" name="bdate" min="1903-01-01" max="date" required title="select your date of birth from the menu. cannot be more than 120 years ago. cannot be in the future"></td>
+                    <td><input type="date" id="bdate" name="bdate" min="1903-01-01" max="2024-10-01" required title="select your date of birth from the menu. cannot be more than 120 years ago. cannot be in the future"></td>
                 </tr>
                 <tr>
                     <td>Social Security*:</td>
-                    <td><input type="password" id="ss" name="ss" size="11" minlength="9" maxlength="11" required title="9-11 characters"></td>
+                    <td><input type="password" id="ss" name="ss" size="11" minlength="9" maxlength="11" required title="9-11 numbers" pattern="[0-9]{9,11}" oninvalid="alert('You must fill out the form!');"></td>
                 </tr>
                 <tr style="height:10px">
                     <td>Address 1*:</td>
-                    <td><input type="text" id="address1" name="address1" size="30" minlength="2" maxlength="30" required title="2-30 characters"></td>
+                    <td><input type="text" id="address1" name="address1" size="30" minlength="2" maxlength="30" required title="2-30 characters" pattern="[A-Za-z0-9'\-]{2,30}" oninvalid="alert('You must fill out the form!');"></td>
                 </tr>
                 <tr style="height:10px">
                     <td>Address 2:</td>
-                    <td><input type="text" id="address2" name="address2" size="30" minlength="2" maxlength="30" title="2-30 characters"></td>
+                    <td><input type="text" id="address2" name="address2" size="30" minlength="2" maxlength="30" title="2-30 characters" pattern="[A-Za-z0-9'\-]{2,30}" oninvalid="alert('You must fill out the form!');"></td>
                 </tr>
                 <tr>
                     <td>City*:</td>
-                    <td><input type="text" id="city" name="city" size="30" minlength="2" maxlength="30" required title="2-30 characters"></td>
+                    <td><input type="text" id="city" name="city" size="30" minlength="2" maxlength="30" required title="2-30 characters" pattern="[A-Za-z]{2,30}" oninvalid="alert('You must fill out the form!');"></td>
                     <td>State*:</td>
                     <td><select required title="select your state">
                         <option selected disabled></option>
@@ -114,15 +114,15 @@ Description: patient registration form.
                     </select></td>
 
                     <td>Zip*:</td>
-                    <td><input type="text" id="zip" name="zip" size="10" minlength="5" maxlength="10" required title="5 digits"></td>
+                    <td><input type="text" id="zip" name="zip" size="10" minlength="5" maxlength="10" required title="5 digits" pattern="[0-9\-]{5,10}" oninvalid="alert('You must fill out the form!');"></td>
                 </tr>
                 <tr>
                     <td>Email*:</td>
-                    <td><input type="text" id="email" name="email" placeholder="name@domain.tld" required title="name@domain.tld"></td>
+                    <td><input type="email" id="email" name="email" placeholder="name@domain.tld" required title="name@domain.tld" oninvalid="alert('You must fill out the form!');"></td>
                 </tr>
                 <tr>
                     <td>Phone:</td>
-                    <td><input type="text" id="phone" name="phone" placeholder="xxx-xxx-xxxx" size="14" maxlength="30" title="000-000-0000"></td>
+                    <td><input type="text" id="phone" name="phone" placeholder="xxx-xxx-xxxx" size="14" maxlength="30" title="000-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" oninvalid="alert('You must fill out the form!');"></td>
                       
                 </tr><tr style="height:10px">
                     <td>Symptoms:</td>
@@ -181,7 +181,7 @@ Description: patient registration form.
                 </tr>
                 <tr>
                     <td>Create User ID*:</td>
-                    <td><input type="text" id="user" name="user" size="30" minlength="5" maxlength="30" required title="5-30 characters. no spaces. only letters, numbers (as long as the first character is NOT a number), underscores or dashes"></td>
+                    <td><input type="text" id="user" name="user" size="30" minlength="5" maxlength="30" required title="5-30 characters. no spaces. only letters, numbers (as long as the first character is NOT a number), underscores or dashes" pattern="[A-Za-z_\-]{1}[A-Za-z0-9_\-]{4,29}" oninvalid="alert('You must fill out the form!');"></td>
                 </tr>
                 <tr style="height:10px">
                     <td>Create Password*:</td>
