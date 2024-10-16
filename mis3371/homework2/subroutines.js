@@ -3,7 +3,7 @@ Program name: subroutines.js
 Author: Christian Loup
 Date created: 10-16-2024
 Date last edited: 10-16-2024
-Version: 1.03
+Version: 1.04
 Description: subroutines for patient form.
 */
 document.getElementById('homework2form').addEventListener('submit', function(event) {
@@ -33,7 +33,7 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
   const tooOld = new Date();
   tooOld.setFullYear(currentDate.getFullYear() - 120);
 
-  if (selectedDate < pastDateLimit) {
+  if (selectedDate < tooOld) {
     alert("Birthday can not be more than 120 years ago.");
     event.preventDefault(); // Prevent form submission
   }
