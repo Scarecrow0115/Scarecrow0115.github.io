@@ -35,5 +35,5 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
 });
 
 function slide(value) {
-  document.getElementById("demo").innerHTML = value; 
+  document.getElementById("health").innerHTML = value; 
 }
