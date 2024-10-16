@@ -27,10 +27,10 @@ function validatePasswords() {
         confirmPasswordError.textContent = "Passwords do not match.";
     }
 }
-*/
 
 document.getElementById('password').oninput = validatePasswords;
 document.getElementById('confirmPassword').oninput = validatePasswords;
+*/
 
 function validateTextInput() {
     const inputField = document.getElementById('textInput');
