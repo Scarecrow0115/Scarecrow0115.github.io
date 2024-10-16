@@ -3,7 +3,7 @@ Program name: homework2.html
 Author: Christian Loup
 Date created: 10-15-2024
 Date last edited: 10-16-2024
-Version: 1.32
+Version: 1.33
 Description: patient registration form.
 -->
 <!DOCTYPE html>
@@ -177,7 +177,7 @@ Description: patient registration form.
                 </tr>   
                 <tr>
                     <td>How is your health? (bad-good) (1-10)*</td>
-                    <td><input type="range" id="health" name="health" min="1" max="10" required title="choose response with slider"></td>
+                    <td><input type="range" id="health" name="health" min="1" max="10" required title="choose response with slider" oninput="slide(this.value)"></td>
                 </tr>
                 <tr>
                     <td>Create User ID*:</td>
