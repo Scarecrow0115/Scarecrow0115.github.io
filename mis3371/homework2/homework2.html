@@ -3,7 +3,7 @@ Program name: homework2.html
 Author: Christian Loup
 Date created: 10-15-2024
 Date last edited: 10-15-2024
-Version: 1.27
+Version: 1.28
 Description: patient registration form.
 -->
 <!DOCTYPE html>
@@ -42,8 +42,8 @@ Description: patient registration form.
                     <td><input type="date" id="bdate" name="bdate" required title="select your date of birth from the menu. cannot be more than 120 years ago. cannot be in the future" oninvalid="date invalid"></td>
                 </tr>
                 <tr>
-                    <td>Social Security*:</td>
-                    <td><input type="password" id="ss" name="ss" size="11" minlength="9" maxlength="11" required title="9-11 numbers" pattern="[0-9]{9,11}" oninvalid="alert('social security invalid');"></td>
+                    <td>Social Security:</td>
+                    <td><input type="password" id="ss" name="ss" size="11" minlength="9" maxlength="11" title="9-11 numbers" pattern="[0-9]{9,11}" oninvalid="alert('social security invalid');"></td>
                 </tr>
                 <tr style="height:10px">
                     <td>Address 1*:</td>
