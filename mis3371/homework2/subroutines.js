@@ -29,4 +29,12 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
     alert("Birthday can not be in the future.");
     event.preventDefault(); // prevent submission
   }
+
+  const tooOld = new Date();
+  tooOld.setFullYear(currentDate.getFullYear() - 120);
+
+  if (selectedDate < pastDateLimit) {
+    alert("Birthday can not be more than 120 years ago.");
+    event.preventDefault(); // Prevent form submission
+  }
 });
