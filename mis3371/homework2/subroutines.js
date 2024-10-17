@@ -49,7 +49,7 @@ function handleSubmit(event) {
 }
 
 function reviewInput() {
-  var formcontents = document.getElementById("signup");
+  var formcontents = document.getElementById('homework2form');
   var formoutput;
   var datatype;
   var i;
