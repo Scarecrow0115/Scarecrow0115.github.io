@@ -2,8 +2,8 @@
 Program name: subroutines.js
 Author: Christian Loup
 Date created: 10-16-2024
-Date last edited: 10-16-2024
-Version: 1.08
+Date last edited: 10-17-2024
+Version: 1.09
 Description: subroutines for patient form.
 */
 document.getElementById('homework2form').addEventListener('submit', function(event) {
