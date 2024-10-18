@@ -211,17 +211,33 @@ Description: patient registration form.
                 </tr>
             </tbody></table>
         </form>
-
-        <!-- Review Section -->
+<!--
+        
         <div id="reviewSection" style="display: none; margin-top: 20px;">
-            <h3>Review Your Input</h3>
+            <h2>Review Your Input</h2>
             <table>
                 <tbody id="reviewTableBody">
-                    <!-- Rows will be added here -->
                 </tbody>
             </table>
             <button onclick="hideReview()">Edit</button>
             <button onclick="document.getElementById('homework2form').submit()">Confirm</button>
+        </div> 
+-->
+
+        <div id="reviewSection" style="display: none;">
+            <h2>Review Your Information</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody id="reviewTableBody">
+                    <!-- Rows will be populated by JavaScript -->
+                </tbody>
+            </table>
+            <button onclick="hideReview()">Close Review</button>
         </div>
         
         <br>
