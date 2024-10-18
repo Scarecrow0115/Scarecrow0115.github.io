@@ -211,18 +211,6 @@ Description: patient registration form.
                 </tr>
             </tbody></table>
         </form>
-<!--
-        
-        <div id="reviewSection" style="display: none; margin-top: 20px;">
-            <h2>Review Your Input</h2>
-            <table>
-                <tbody id="reviewTableBody">
-                </tbody>
-            </table>
-            <button onclick="hideReview()">Edit</button>
-            <button onclick="document.getElementById('homework2form').submit()">Confirm</button>
-        </div> 
--->
 
         <div id="reviewSection" style="display: none;">
             <h2>Review Your Information</h2>
@@ -233,9 +221,7 @@ Description: patient registration form.
                         <th>Value</th>
                     </tr>
                 </thead>
-                <tbody id="reviewTableBody">
-                    <!-- Rows will be populated by JavaScript -->
-                </tbody>
+                <tbody id="reviewTableBody"></tbody>
             </table>
             <button onclick="hideReview()">Close Review</button>
         </div>
