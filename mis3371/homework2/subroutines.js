@@ -82,7 +82,7 @@ function showReview() {
         { label: "Address 1", value: address1 },
         { label: "Address 2", value: address2 },
         { label: "City", value: city },
-        { label: "State", value: state },
+        //{ label: "State", value: state },
         { label: "Zip", value: zip },
         { label: "Email", value: email },
         { label: "Phone", value: phone },
