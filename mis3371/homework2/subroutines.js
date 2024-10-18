@@ -61,7 +61,7 @@ function showReview() {
     const address1 = document.getElementById("address1").value;
     const address2 = document.getElementById("address2").value;
     const city = document.getElementById("city").value;
-    const state = document.querySelector("select[name='state']").value;
+    //const state = document.querySelector("select[name='state']").value;
     const zip = document.getElementById("zip").value;
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
