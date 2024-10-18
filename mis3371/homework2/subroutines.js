@@ -2,8 +2,8 @@
 Program name: subroutines.js
 Author: Christian Loup
 Date created: 10-16-2024
-Date last edited: 10-17-2024
-Version: 1.09
+Date last edited: 10-18-2024
+Version: 1.10
 Description: subroutines for patient form.
 */
 document.getElementById('homework2form').addEventListener('submit', function(event) {
@@ -61,7 +61,7 @@ function showReview() {
     const address1 = document.getElementById("address1").value;
     const address2 = document.getElementById("address2").value;
     const city = document.getElementById("city").value;
-    //const state = document.querySelector("select[name='state']").value;
+    const state = document.querySelector("select[name='state']").value;
     const zip = document.getElementById("zip").value;
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
@@ -82,7 +82,7 @@ function showReview() {
         { label: "Address 1", value: address1 },
         { label: "Address 2", value: address2 },
         { label: "City", value: city },
-        //{ label: "State", value: state },
+        { label: "State", value: state },
         { label: "Zip", value: zip },
         { label: "Email", value: email },
         { label: "Phone", value: phone },
