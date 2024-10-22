@@ -22,19 +22,10 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
 });
 
 //document.getElementById('homework2form').addEventListener('submit', function(event) {
-function validatePassword() {
+function confirmPassword() {
   const password = document.getElementById('password').value;
   const repassword = document.getElementById('repassword').value;
   const pwdError = document.getElementById('pwdError');
-  const user = document.getElementById('user').value;
-  const fname = document.getElementById('fname').value;
-  const lname = document.getElementById('lname').value;
-  
-  if (password === user || password.includes(user) || password.includes(fname) || password.includes(lname)) {
-    pwdError.textContent = "Password cannot be the same as your User ID or contain your User ID or Name.";
-    event.preventDefault(); // prevent submission
-    return false;
-  } 
   
   if (password !== repassword) {
     pwdError.textContent = "Passwords do not match.";
@@ -46,19 +37,38 @@ function validatePassword() {
     return true; // Validation successful
 }
 
-document.getElementById('password').addEventListener('input', validatePassword);
-document.getElementById('repassword').addEventListener('input', validatePassword);
-//document.getElementById('firstName').addEventListener('input', validatePassword);
-//document.getElementById('user').addEventListener('input', validatePassword);
-
+document.getElementById('repassword').addEventListener('input', confirmPassword);
 
 // Add event listener for form submission
+document.getElementById('homework2form').addEventListener('submit', function(event) {
+    if (!confirmPassword()) {
+        event.preventDefault(); // Prevent submission if validation fails
+    }
+});
+
+function validatePassword() {
+  const password = document.getElementById('password').value;
+  const pwdError = document.getElementById('pwdError');
+  const user = document.getElementById('user').value;
+  const fname = document.getElementById('fname').value;
+  const lname = document.getElementById('lname').value;
+
+  if (password === user || password.includes(user) || password.includes(fname) || password.includes(lname)) {
+    pwdError.textContent = "Password cannot be the same as your User ID or contain your User ID or Name.";
+    event.preventDefault(); // prevent submission
+    return false;
+  } 
+    pwdError.textContent = ""; // Clear error message
+    return true; // Validation successful
+}
+
+document.getElementById('password').addEventListener('input', validatePassword);
+
 document.getElementById('homework2form').addEventListener('submit', function(event) {
     if (!validatePassword()) {
         event.preventDefault(); // Prevent submission if validation fails
     }
 });
-
 
 function slide(value) {
   document.getElementById("health").innerHTML = value; 
