@@ -28,7 +28,13 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
   const user = document.getElementById('user').value;
   const fname = document.getElementById('fname').value;
   const lname = document.getElementById('lname').value;
-
+  
+  if (password === user || password.includes(user) || password.includes(fname) || password.includes(lname)) {
+    pwdError.textContent = "Password cannot be the same as your User Name or contain your User Name or Name.";
+    event.preventDefault(); // prevent submission
+    return; // exit the function
+  } 
+  
   if (password !== repassword) {
     pwdError.textContent = "Passwords do not match.";
     event.preventDefault(); // prevent submission
@@ -36,12 +42,6 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
   //} else {
     //pwdError.textContent = ""; // clear error message
   }
-  if (password === user || password.includes(user) || password.includes(fname) || password.includes(lname)) {
-    pwdError.textContent = "Password cannot be the same as your User Name or contain your User Name or Name.";
-    event.preventDefault(); // prevent submission
-    return; // exit the function
-  } 
-
     pwdError.textContent = ""; // clear error message
 });
 
