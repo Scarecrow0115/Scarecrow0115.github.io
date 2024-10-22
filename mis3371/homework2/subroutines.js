@@ -21,7 +21,6 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
   }
 });
 
-//document.getElementById('homework2form').addEventListener('submit', function(event) {
 function confirmPassword() {
   const password = document.getElementById('password').value;
   const repassword = document.getElementById('repassword').value;
@@ -47,11 +46,11 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
 });
 
 function validatePassword() {
-  const password = document.getElementById('password').value;
+  const password = document.getElementById('password').value.toLowerCase();
   const pwdError = document.getElementById('pwdError');
-  const user = document.getElementById('user').value;
-  const fname = document.getElementById('fname').value;
-  const lname = document.getElementById('lname').value;
+  const user = document.getElementById('user').value.toLowerCase();
+  const fname = document.getElementById('fname').value.toLowerCase();
+  const lname = document.getElementById('lname').value.toLowerCase();
 
   if (password === user || password.includes(user) || password.includes(fname) || password.includes(lname)) {
     pwdError.textContent = "Password cannot be the same as your User ID or contain your User ID or Name.";
@@ -72,16 +71,6 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
 
 function slide(value) {
   document.getElementById("health").innerHTML = value; 
-}
-
-function handleSubmit(event) {
-    event.preventDefault(); // prevent submission
-    const usernameInput = document.getElementById('username').value;
-    const lowercaseUsername = usernameInput.toLowerCase();
-
-    document.getElementById('displayUsername').textContent = lowercaseUsername;
-
-    document.getElementById('username').value = '';
 }
 
 function showReview() {
@@ -106,7 +95,7 @@ function showReview() {
     const hasInsurance = document.querySelector("input[name='ins']:checked")?.value;
     const vaccinated = document.querySelector("input[name='vac']:checked")?.value;
     const health = document.getElementById("healthslider").value;
-    const user = document.getElementById("user").value;
+    const user = document.getElementById("user").value.toLowerCase();
 
     // Creating a table row for each field
     const fields = [
