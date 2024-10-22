@@ -48,9 +48,9 @@ function validatePassword() {
 
 document.getElementById('password').addEventListener('input', validatePassword);
 document.getElementById('repassword').addEventListener('input', validatePassword);
-document.getElementById('firstName').addEventListener('input', validatePassword);
-document.getElementById('userId').addEventListener('input', validatePassword);
-document.getElementById('userName').addEventListener('input', validatePassword);
+//document.getElementById('firstName').addEventListener('input', validatePassword);
+document.getElementById('user').addEventListener('input', validatePassword);
+
 
 // Add event listener for form submission
 document.getElementById('homework2form').addEventListener('submit', function(event) {
