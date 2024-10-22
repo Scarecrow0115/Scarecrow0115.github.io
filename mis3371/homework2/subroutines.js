@@ -49,7 +49,7 @@ function validatePassword() {
 document.getElementById('password').addEventListener('input', validatePassword);
 document.getElementById('repassword').addEventListener('input', validatePassword);
 //document.getElementById('firstName').addEventListener('input', validatePassword);
-document.getElementById('user').addEventListener('input', validatePassword);
+//document.getElementById('user').addEventListener('input', validatePassword);
 
 
 // Add event listener for form submission
