@@ -25,20 +25,24 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
   const password = document.getElementById('password').value;
   const repassword = document.getElementById('repassword').value;
   const pwdError = document.getElementById('pwdError');
-  const userId = document.getElementById('userId').value;
-  const userName = document.getElementById('userName').value;
+  const user = document.getElementById('user').value;
+  const fname = document.getElementById('fname').value;
+  const lname = document.getElementById('lname').value;
 
   if (password !== repassword) {
     pwdError.textContent = "Passwords do not match.";
     event.preventDefault(); // prevent submission
-  } else {
+    return;
+  //} else {
     //pwdError.textContent = ""; // clear error message
   }
-  if (password === userId || password.includes(userId) || password.includes(userName)) {
-    alert("Password cannot be the same as your User ID or contain your User ID or Name.");
-    return false;
-  }
-  return true;
+  if (password === user || password.includes(user) || password.includes(fname) || password.includes(lname)) {
+    pwdError.textContent = "Password cannot be the same as your User Name or contain your User Name or Name.";
+    event.preventDefault(); // prevent submission
+    return; // exit the function
+  } 
+
+    pwdError.textContent = ""; // clear error message
 });
 
 
