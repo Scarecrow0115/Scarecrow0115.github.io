@@ -32,15 +32,13 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
   if (password === user || password.includes(user) || password.includes(fname) || password.includes(lname)) {
     pwdError.textContent = "Password cannot be the same as your User ID or contain your User ID or Name.";
     event.preventDefault(); // prevent submission
-    return; // exit the function
+    return;
   } 
   
   if (password !== repassword) {
     pwdError.textContent = "Passwords do not match.";
     event.preventDefault(); // prevent submission
     return;
-  //} else {
-    //pwdError.textContent = ""; // clear error message
   }
     pwdError.textContent = ""; // clear error message
 });
