@@ -17,7 +17,7 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
     event.preventDefault(); // prevent submission
   } else if (selectedDate < tooOld) {
       alert("Birthday can not be more than 120 years ago.");
-      event.preventDefault(); // Prevent form submission
+      event.preventDefault(); // prevent submission
   }
 });
 
@@ -25,14 +25,22 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
   const password = document.getElementById('password').value;
   const repassword = document.getElementById('repassword').value;
   const pwdError = document.getElementById('pwdError');
+  const userId = document.getElementById('userId').value;
+  const userName = document.getElementById('userName').value;
 
   if (password !== repassword) {
     pwdError.textContent = "Passwords do not match.";
     event.preventDefault(); // prevent submission
   } else {
-    pwdError.textContent = ""; // clear error message
+    //pwdError.textContent = ""; // clear error message
   }
+  if (password === userId || password.includes(userId) || password.includes(userName)) {
+    alert("Password cannot be the same as your User ID or contain your User ID or Name.");
+    return false;
+  }
+  return true;
 });
+
 
 function slide(value) {
   document.getElementById("health").innerHTML = value; 
