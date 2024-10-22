@@ -30,7 +30,7 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
   const lname = document.getElementById('lname').value;
   
   if (password === user || password.includes(user) || password.includes(fname) || password.includes(lname)) {
-    pwdError.textContent = "Password cannot be the same as your User Name or contain your User Name or Name.";
+    pwdError.textContent = "Password cannot be the same as your User ID or contain your User ID or Name.";
     event.preventDefault(); // prevent submission
     return; // exit the function
   } 
