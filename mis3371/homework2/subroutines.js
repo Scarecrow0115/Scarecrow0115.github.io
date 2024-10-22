@@ -21,7 +21,8 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
   }
 });
 
-document.getElementById('homework2form').addEventListener('submit', function(event) {
+//document.getElementById('homework2form').addEventListener('submit', function(event) {
+function validatePassword() {
   const password = document.getElementById('password').value;
   const repassword = document.getElementById('repassword').value;
   const pwdError = document.getElementById('pwdError');
@@ -32,15 +33,30 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
   if (password === user || password.includes(user) || password.includes(fname) || password.includes(lname)) {
     pwdError.textContent = "Password cannot be the same as your User ID or contain your User ID or Name.";
     event.preventDefault(); // prevent submission
-    return;
+    return false;
   } 
   
   if (password !== repassword) {
     pwdError.textContent = "Passwords do not match.";
     event.preventDefault(); // prevent submission
-    return;
+    return false;
   }
-    pwdError.textContent = ""; // clear error message
+  
+    pwdError.textContent = ""; // Clear error message
+    return true; // Validation successful
+}
+
+document.getElementById('password').addEventListener('input', validatePassword);
+document.getElementById('repassword').addEventListener('input', validatePassword);
+document.getElementById('firstName').addEventListener('input', validatePassword);
+document.getElementById('userId').addEventListener('input', validatePassword);
+document.getElementById('userName').addEventListener('input', validatePassword);
+
+// Add event listener for form submission
+document.getElementById('homework2form').addEventListener('submit', function(event) {
+    if (!validatePassword()) {
+        event.preventDefault(); // Prevent submission if validation fails
+    }
 });
 
 
