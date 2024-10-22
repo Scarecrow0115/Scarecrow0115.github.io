@@ -24,15 +24,15 @@ document.getElementById('homework2form').addEventListener('submit', function(eve
 function confirmPassword() {
   const password = document.getElementById('password').value;
   const repassword = document.getElementById('repassword').value;
-  const pwdError = document.getElementById('pwdError');
+  const pwdError2 = document.getElementById('pwdError2');
   
   if (password !== repassword) {
-    pwdError.textContent = "Passwords do not match.";
+    pwdError2.textContent = "Passwords do not match.";
     event.preventDefault(); // prevent submission
     return false;
   }
   
-    pwdError.textContent = ""; // Clear error message
+    pwdError2.textContent = ""; // Clear error message
     return true; // Validation successful
 }
 
