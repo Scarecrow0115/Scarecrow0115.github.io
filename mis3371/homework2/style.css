@@ -29,6 +29,17 @@ table.body {
     background-color: lightgray;
 }
 
+tbody.body {
+    width: 50%;
+    color: rgb(18, 18, 172);
+    text-align: left;
+    font-family: Helvetica, sans-serif;
+    margin-left: 50px;
+    border: 2px solid black;
+    border-spacing: 15px;
+    background-color: lightgray;
+}
+
 table.footer {
     color: darkred;
     text-align: left;
