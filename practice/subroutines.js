@@ -80,6 +80,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function validateSocial() {
+        const social = document.getElementById("ss");
+        const error = document.getElementById("ssError");
+        const regex = ^[0-9]{9,11}?$
+
+        if (!regex.test(social.value)) {
+            error.textContent = "Invalid Social Security number. 9-11 numbers only.";
+        } else {
+            error.textContent = "";
+        }
+    }
+
+
     // Event listeners for onblur validation
     document.getElementById("fname").addEventListener("blur", validateFirstName);
     document.getElementById("minitial").addEventListener("blur", validateMiddleInitial);
@@ -87,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("email").addEventListener("blur", validateEmail);
     document.getElementById("phone").addEventListener("blur", validatePhone);
     document.getElementById("bdate").addEventListener("blur", validateDate);
+    document.getElementById("ss").addEventListener("blur", validateSocial);
 
     // Form submission validation
     form.addEventListener("submit", function (event) {
