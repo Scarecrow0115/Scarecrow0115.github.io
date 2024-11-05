@@ -93,6 +93,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function validateAddress1() {
+        const address1 = document.getElementById("address1");
+        const error = document.getElementById("address1Error");
+        const regex = /^[A-Za-z0-9'\- ]{2,30}$/;
+
+        if (!regex.test(address1.value)) {
+            error.textContent = "Invalid Address. 2-30 characters.";
+        } else {
+            error.textContent = "";
+        }
+    }
+
+    function validateAddress2() {
+        const address2 = document.getElementById("address2");
+        const error = document.getElementById("address2Error");
+        const regex = /^(|[A-Za-z0-9'\- ]{2,30})$/;
+
+        if (!regex.test(address2.value)) {
+            error.textContent = "Invalid Address. 2-30 characters.";
+        } else {
+            error.textContent = "";
+        }
+    }
 
     // Event listeners for onblur validation
     document.getElementById("fname").addEventListener("blur", validateFirstName);
@@ -102,6 +125,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("phone").addEventListener("blur", validatePhone);
     document.getElementById("bdate").addEventListener("blur", validateDate);
     document.getElementById("ss").addEventListener("blur", validateSocial);
+    document.getElementById("address1").addEventListener("blur", validateAddress1);
+    document.getElementById("address2").addEventListener("blur", validateAddress2);
 
     // Form submission validation
     form.addEventListener("submit", function (event) {
@@ -113,6 +138,8 @@ document.addEventListener("DOMContentLoaded", () => {
         validatePhone();
         validateDate();
         validateSocial();
+        validateAddress1();
+        validateAddress2();
 
         // If any error message is present, prevent form submission
         const errors = document.querySelectorAll(".error");
