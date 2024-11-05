@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const selectedDate = new Date(document.getElementById('bdate').value);
         const currentDate = new Date();
         const tooOld = new Date();
+        const error = document.getElementById("bdateError");
         tooOld.setFullYear(currentDate.getFullYear() - 120);
 
         if (selectedDate > currentDate) {
