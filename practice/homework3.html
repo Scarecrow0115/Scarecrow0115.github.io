@@ -32,10 +32,15 @@ Description: patient registration form.
                 <tr>
                     <td>First Name*:</td>
                     <td><input type="text" id="fname" name="fname" size="30" maxlength="30" required title="1-30 characters. letters, apostrophes and dashes only" pattern="[A-Za-z'\-]{1,30}" oninvalid="alert('first name invalid');"></td>
+                    <td class="error" id="fnameError"></td>
+                    
                     <td>Middle Initial:</td>
                     <td><input type="text" id="minitial" name="minitial" size="1" maxlength="1" title="0 or 1 character. letters only" pattern="[A-Za-z ]{0,1}" oninvalid="alert('middle initial invalid');"></td>
+                    <td class="error" id="minitialError"></td>
+                    
                     <td>Last Name*:</td>
                     <td><input type="text" id="lname" name="lname" size="30" maxlength="30" required title="1-30 characters. letters, apostrophes, numbers 2 to 5, ie, the 3rd, and dashes only " pattern="[A-Za-z2-5'\-]{1,30}" oninvalid="alert('last name invalid');"></td>
+                    <td class="error" id="lnameError"></td>
                 </tr>
                 <tr>
                     <td>Date of Birth*:</td>
