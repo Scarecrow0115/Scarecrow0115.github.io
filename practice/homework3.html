@@ -205,7 +205,8 @@ Description: patient registration form.
                     
                 <tr class="form" onsubmit="return handleSubmit(event);">
                     <td>Create User ID*:</td>
-                    <td><input type="text" id="user" name="user" size="30" minlength="5" maxlength="30" required title="5-30 characters. no spaces. only letters, numbers (as long as the first character is NOT a number), underscores or dashes" pattern="[A-Za-z_\-]{1}[A-Za-z0-9_\-]{4,29}"></td>
+                    <td><input type="text" id="user" name="user" size="30" minlength="5" maxlength="20" required title="5-20 characters. no spaces or special characters. only letters, numbers (as long as the first character is NOT a number), underscores or dashes" pattern="[A-Za-z_\-]{1}[A-Za-z0-9_\-]{4,29}">
+                    <div id="userError" class="error"></div></td>
                 </tr>
                     
                 <tr style="height:10px">
