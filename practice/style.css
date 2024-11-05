@@ -83,3 +83,9 @@ a:visited {
     color: red;  
     position: absolute;
 }
+
+/* Style for the radio button when it's unselected (has no checked state) */
+input[type="radio"]:invalid {
+  border: 2px solid red;
+  outline: none; /* Remove outline to avoid double borders */
+}
