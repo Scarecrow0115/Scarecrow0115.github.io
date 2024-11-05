@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function validateDate() {
-        const bdate = new Date(document.getElementById('bdate');
+        const bdate = new Date(document.getElementById('bdate'));
         const selectedDate = new Date(document.getElementById('bdate').value);
         const currentDate = new Date();
         const tooOld = new Date();
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function validateSocial() {
         const social = document.getElementById("ss");
         const error = document.getElementById("ssError");
-        const regex = ^[0-9]{9,11}?$;
+        const regex = /^[0-9]{9,11}?$/;
 
         if (!regex.test(social.value)) {
             error.textContent = "Invalid Social Security number. 9-11 numbers only.";
