@@ -44,23 +44,29 @@ Description: patient registration form.
                 </tr>
                 <tr>
                     <td>Date of Birth*:</td>
-                    <td><input type="date" id="bdate" name="bdate" required title="select your date of birth from the menu. cannot be more than 120 years ago. cannot be in the future"></td>
+                    <td><input type="date" id="bdate" name="bdate" required title="select your date of birth from the menu. cannot be more than 120 years ago. cannot be in the future">
+                    <div id="bdateError" class="error"></div></td>
                 </tr>
                 <tr>
                     <td>Social Security:</td>
-                    <td><input type="password" id="ss" name="ss" size="11" minlength="9" maxlength="11" title="9-11 numbers" pattern="[0-9]{9,11}"></td>
+                    <td><input type="password" id="ss" name="ss" size="11" minlength="9" maxlength="11" title="9-11 numbers" pattern="[0-9]{9,11}">
+                    <div id="ssError" class="error"></div></td>
                 </tr>
                 <tr style="height:10px">
                     <td>Address 1*:</td>
-                    <td><input type="text" id="address1" name="address1" size="30" minlength="2" maxlength="30" required title="2-30 characters" pattern="[A-Za-z0-9'\- ]{2,30}"></td>
+                    <td><input type="text" id="address1" name="address1" size="30" minlength="2" maxlength="30" required title="2-30 characters" pattern="[A-Za-z0-9'\- ]{2,30}">
+                    <div id="address1Error" class="error"></div></td>
                 </tr>
                 <tr style="height:10px">
                     <td>Address 2:</td>
-                    <td><input type="text" id="address2" name="address2" size="30" minlength="2" maxlength="30" title="2-30 characters" pattern="[A-Za-z0-9'\- ]{2,30}"></td>
+                    <td><input type="text" id="address2" name="address2" size="30" minlength="2" maxlength="30" title="2-30 characters" pattern="[A-Za-z0-9'\- ]{2,30}">
+                    <div id="address2Error" class="error"></div></td>
                 </tr>
                 <tr>
                     <td>City*:</td>
-                    <td><input type="text" id="city" name="city" size="30" minlength="2" maxlength="30" required title="2-30 characters" pattern="[A-Za-z]{2,30}"></td>
+                    <td><input type="text" id="city" name="city" size="30" minlength="2" maxlength="30" required title="2-30 characters" pattern="[A-Za-z]{2,30}">
+                    <div id="cityError" class="error"></div></td>
+                    
                     <td>State*:</td>
                     <td><select id="state" name="state" required title="select your state" oninvalid="alert('select state');">
                         <option selected disabled></option>
@@ -116,24 +122,29 @@ Description: patient registration form.
                         <option value="WV">West Virginia</option>
                         <option value="WI">Wisconsin</option>
                         <option value="WY">Wyoming</option>
-                    </select></td>
+                    </select>
+                    <div id="stateError" class="error"></div></td>
 
                     <td>Zip*:</td>
-                    <td><input type="text" id="zip" name="zip" size="10" minlength="5" maxlength="10" required title="5 digits" pattern="[0-9\-]{5,10}"></td>
+                    <td><input type="text" id="zip" name="zip" size="10" minlength="5" maxlength="10" required title="5 digits" pattern="[0-9\-]{5,10}">
+                    <div id="zipError" class="error"></div></td>
                 </tr>
                 <tr>
                     <td>Email*:</td>
-                    <td><input type="email" id="email" name="email" placeholder="name@domain.tld" required title="name@domain.tld" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"></td>
+                    <td><input type="email" id="email" name="email" placeholder="name@domain.tld" required title="name@domain.tld" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
+                    <div id="emailError" class="error"></div></td>
                 </tr>
                 <tr>
                     <td>Phone:</td>
-                    <td><input type="text" id="phone" name="phone" placeholder="xxx-xxx-xxxx" size="14" maxlength="30" title="000-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"></td>
+                    <td><input type="text" id="phone" name="phone" placeholder="xxx-xxx-xxxx" size="14" maxlength="30" title="000-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                    <div id="phoneError" class="error"></div></td>
                       
                 </tr><tr style="height:10px">
                     <td>Symptoms:</td>
                 
                     <td><textarea id="message" name="message" rows="10" cols="50"></textarea></td>
                 </tr>
+                    
                 <tr>
                     <td>Check the following you have had before:</td>
                 </tr>
@@ -152,11 +163,13 @@ Description: patient registration form.
                 <tr style="height:10px">      
                     <td><input type="checkbox" id="illness5" name="illness5" value="Flu" title="check if you have had"><label for="illness5">Flu</label></td>
                 </tr>
+                    
                 <tr>
                     <td>Gender*:</td>
                 </tr>
                 <tr style="height:10px">
-                    <td><input type="radio" id="male" name="gender" value="Male" required title="select your gender" oninvalid="alert('select gender');"><label for="male">Male</label></td>
+                    <td><input type="radio" id="male" name="gender" value="Male" required title="select your gender" oninvalid="alert('select gender');"><label for="male">Male</label>
+                    <div id="maleError" class="error"></div></td>
                 </tr>
                 <tr style="height:10px">
                     <td><input type="radio" id="female" name="gender" value="Female" title="select your gender"><label for="female">Female</label></td>
