@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const regex = /^(|[0-9]{9,11})$/;
 
         if (!regex.test(social.value)) {
-            error.textContent = "Invalid Social Security number. 9-11 numbers only.";
+            error.textContent = "Invalid Social Security number. 9 digits.";
         } else {
             error.textContent = "";
         }
