@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function validateSocial() {
         const social = document.getElementById("ss");
         const error = document.getElementById("ssError");
-        const regex = /^[0-9]{9,11}?$/;
+        const regex = /^[0-9]{9,11}$|^$/;
 
         if (!regex.test(social.value)) {
             error.textContent = "Invalid Social Security number. 9-11 numbers only.";
@@ -111,6 +111,8 @@ document.addEventListener("DOMContentLoaded", () => {
         validateLastName();
         validateEmail();
         validatePhone();
+        validateDate();
+        validateSocial();
 
         // If any error message is present, prevent form submission
         const errors = document.querySelectorAll(".error");
@@ -123,22 +125,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-/*
-document.getElementById('homework3form').addEventListener('submit', function(event) {
-  const selectedDate = new Date(document.getElementById('bdate').value);
-  const currentDate = new Date();
-  const tooOld = new Date();
-  tooOld.setFullYear(currentDate.getFullYear() - 120);
-
-  if (selectedDate > currentDate) {
-    alert("Birthday can not be in the future.");
-    event.preventDefault(); // prevent submission
-  } else if (selectedDate < tooOld) {
-      alert("Birthday can not be more than 120 years ago.");
-      event.preventDefault(); // prevent submission
-  }
-});
-*/
 
 function confirmPassword() {
   const password = document.getElementById('password').value;
