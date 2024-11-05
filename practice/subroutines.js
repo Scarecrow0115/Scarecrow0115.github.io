@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const regex = /^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$/;
 
         if (!regex.test(email.value)) {
-            error.textContent = "Invalid email address.";
+            error.textContent = "Invalid email address. Format: name@domain.tld";
         } else {
             error.textContent = "";
         }
