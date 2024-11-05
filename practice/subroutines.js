@@ -144,7 +144,6 @@ function validatePassword() {
     } else {
         pwdError.textContent = "";
     }
-}
 
     if (passwordLower === user || passwordLower.includes(user) || passwordLower.includes(fname) || passwordLower.includes(lname)) {
         pwdError.textContent = "Password cannot be the same as your User ID or contain your User ID or Name.";
