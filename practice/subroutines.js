@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const regex = /^(|[0-9]{3}-[0-9]{3}-[0-9]{4})$/;
 
         if (!regex.test(phone.value)) {
-            error.textContent = "Invalid phone number. Format: xxx-xxx-xxxx.";
+            error.textContent = "Invalid phone number. Format: ###-###-####.";
         } else {
             error.textContent = "";
         }
@@ -117,6 +117,42 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function validateCity() {
+        const city = document.getElementById("city");
+        const error = document.getElementById("cityError");
+        const regex = /^(|[A-Za-z0-9'\- ]{2,30})$/;
+
+        if (!regex.test(city.value)) {
+            error.textContent = "Invalid City. 2-30 characters.";
+        } else {
+            error.textContent = "";
+        }
+    }
+
+    function validateState() {
+        const state = document.getElementById("state");
+        const error = document.getElementById("stateError");
+        const regex = /^(|[A-Za-z0-9'\- ]{2,30})$/;
+
+        if (!regex.test(state.value)) {
+            error.textContent = "Invalid State. 2-30 characters.";
+        } else {
+            error.textContent = "";
+        }
+    }
+
+    function validateZip() {
+        const zip = document.getElementById("zip");
+        const error = document.getElementById("zipError");
+        const regex = /^[0-9]{5}$/;
+
+        if (!regex.test(zip.value)) {
+            error.textContent = "Invalid Zip. 5 digits.";
+        } else {
+            error.textContent = "";
+        }
+    }
+
     // Event listeners for onblur validation
     document.getElementById("fname").addEventListener("blur", validateFirstName);
     document.getElementById("minitial").addEventListener("blur", validateMiddleInitial);
@@ -127,6 +163,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("ss").addEventListener("blur", validateSocial);
     document.getElementById("address1").addEventListener("blur", validateAddress1);
     document.getElementById("address2").addEventListener("blur", validateAddress2);
+    document.getElementById("city").addEventListener("blur", validateCity);
+    document.getElementById("state").addEventListener("blur", validateState);
+    document.getElementById("zip").addEventListener("blur", validateZip);
 
     // Form submission validation
     form.addEventListener("submit", function (event) {
@@ -140,6 +179,9 @@ document.addEventListener("DOMContentLoaded", () => {
         validateSocial();
         validateAddress1();
         validateAddress2();
+        validateCity();
+        validateState();
+        validateZip();
 
         // If any error message is present, prevent form submission
         const errors = document.querySelectorAll(".error");
