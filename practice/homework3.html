@@ -206,20 +206,18 @@ Description: patient registration form.
                 <tr class="form" onsubmit="return handleSubmit(event);">
                     <td>Create User ID*:</td>
                     <td><input type="text" id="user" name="user" size="30" minlength="5" maxlength="20" required title="5-20 characters. no spaces or special characters. only letters, numbers (as long as the first character is NOT a number), underscores or dashes" pattern="[A-Za-z_\-]{1}[A-Za-z0-9_\-]{4,29}">
-                    <td id="userError" class="error"></td>
-                </tr>
+                    <div id="userError" class="error"></div></td>
+                </tr><tr></tr>
                     
                 <tr style="height:10px">
                     <td>Create Password*:</td>
                     <td><input type="password" id="password" name="password" size="30" minlength="8" maxlength="30" required title="8-30 characters. must contain at least 1 upper case letter, 1 lower case letter, 1 number and 1 special character. do not include parts of your username or name" pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*\(\)\-_+=\\\/><.,`~])(?!.*\x22).{8,30}"></td>
-                    <td class="error" id="pwdError"></td>
+                    <div class="error" id="pwdError"></div></td>
                 </tr>
                 <tr style="height:10px">
                     <td>Re-enter Password*:</td>
-                    <td><input type="password" id="repassword" name="repassword" size="30" minlength="8" maxlength="30" required title="must match password"></td>
-                    <td></td>
-                </tr>
-                    <td class="error" id="pwdError2"></td>
+                    <td><input type="password" id="repassword" name="repassword" size="30" minlength="8" maxlength="30" required title="must match password">
+                    <div class="error" id="pwdError2"></div></td>
                     
                 <tr>
                 </tr>
