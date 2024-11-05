@@ -62,12 +62,30 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function validateDate() {
+        const selectedDate = new Date(document.getElementById('bdate').value);
+        const currentDate = new Date();
+        const tooOld = new Date();
+        tooOld.setFullYear(currentDate.getFullYear() - 120);
+
+        if (selectedDate > currentDate) {
+        error.textContent = "Birthday can not be in the future.";
+        event.preventDefault(); // prevent submission
+        } else if (selectedDate < tooOld) {
+        error.textContent = "Birthday can not be more than 120 years ago.";
+        event.preventDefault(); // prevent submission
+        } else {
+            error.textContent = "";
+        }
+    }
+
     // Event listeners for onblur validation
     document.getElementById("fname").addEventListener("blur", validateFirstName);
     document.getElementById("minitial").addEventListener("blur", validateMiddleInitial);
     document.getElementById("lname").addEventListener("blur", validateLastName);
     document.getElementById("email").addEventListener("blur", validateEmail);
     document.getElementById("phone").addEventListener("blur", validatePhone);
+    document.getElementById("bdate").addEventListener("blur", validateDate);
 
     // Form submission validation
     form.addEventListener("submit", function (event) {
