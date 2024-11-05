@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Event listeners for onblur validation
     document.getElementById("fname").addEventListener("blur", validateFirstName);
+    document.getElementById("minitial").addEventListener("blur", validateMiddleInitial);
     document.getElementById("lname").addEventListener("blur", validateLastName);
     document.getElementById("email").addEventListener("blur", validateEmail);
     document.getElementById("phone").addEventListener("blur", validatePhone);
@@ -98,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", function (event) {
         // Run all validations before submitting
         validateFirstName();
+        validateMiddleInitial();
         validateLastName();
         validateEmail();
         validatePhone();
