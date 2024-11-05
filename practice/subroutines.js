@@ -14,6 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function validateMiddleInitial() {
+        const minitial = document.getElementById("minitial");
+        const error = document.getElementById("minitialError");
+        const regex = /^[A-Za-z]{1,30}$/;
+
+        if (!regex.test(fname.value)) {
+            error.textContent = "Invalid middle initial. Only letters allowed.";
+        } else {
+            error.textContent = "";
+        }
+    }
+
     function validateLastName() {
         const lname = document.getElementById("lname");
         const error = document.getElementById("lnameError");
