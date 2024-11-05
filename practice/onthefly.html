@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Validation</title>
+    <style>
+        .error { color: red; font-size: 12px; }
+    </style>
+    <script>
+        // Function to validate the first name input
+        function validateFirstNameOnTheFly() {
+            var fname = document.getElementById('fname');
+            var errorMessage = document.getElementById('error-message');
+            var fnameValue = fname.value;
+
+            // Regex to match the pattern: letters, apostrophes, dashes, 1-30 characters long
+            var regex = /^[A-Za-z'-]{1,30}$/;
+
+            // Clear any previous error messages
+            errorMessage.textContent = '';
+
+            // If the value doesn't match the regex, display an error message
+            if (!regex.test(fnameValue)) {
+                errorMessage.textContent = 'Invalid input. Please use letters, apostrophes, and dashes only (1-30 characters).';
+                fname.style.borderColor = 'red';  // Highlight input field with red border
+            } else {
+                fname.style.borderColor = '';  // Reset the border if input is valid
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="fname" size="30" maxlength="30" required title="1-30 characters. Letters, apostrophes, and dashes only" 
+                           oninput="validateFirstNameOnTheFly()">
+                    <!-- Error message displayed here -->
+                    <div id="error-message" class="error"></div>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
