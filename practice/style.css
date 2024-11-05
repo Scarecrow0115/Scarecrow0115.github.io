@@ -64,6 +64,7 @@ tr {
 
 td {
     width: 13%;
+    position: relative;
 }
 
 a:link {
