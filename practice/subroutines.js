@@ -84,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
     function validateSocial() {
         const social = document.getElementById("ss");
         const error = document.getElementById("ssError");
-        //const regex = /^[0-9]{9,11}$|^$/;
         const regex = /^(|[0-9]{9,11})$/;
 
         if (!regex.test(social.value)) {
