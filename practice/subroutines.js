@@ -137,9 +137,9 @@ function validatePassword() {
     const fname = document.getElementById('fname').value.toLowerCase();
     const lname = document.getElementById('lname').value.toLowerCase();
 
-    const regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,30}$/;
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>/?~`])[^\"]{8,30}$/;
 
-    if (!regex.test(password.value)) {
+    if (!passwordPattern.test(password.value)) {
         pwdError.textContent = "Password must be 8-30 characters long, include at least one uppercase letter, one lowercase letter, one number, and one special character.";
     } else {
         pwdError.textContent = "";
