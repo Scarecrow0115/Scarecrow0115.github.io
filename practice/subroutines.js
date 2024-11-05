@@ -141,14 +141,14 @@ function validatePassword() {
 
     if (!passwordPattern.test(password.value)) {
         pwdError.textContent = "Password must be 8-30 characters long, include at least one uppercase letter, one lowercase letter, one number, and one special character.";
-    } else {
-        pwdError.textContent = "";
+        event.preventDefault(); // prevent submission
+        return false;
     }
 
     if (passwordLower === user || passwordLower.includes(user) || passwordLower.includes(fname) || passwordLower.includes(lname)) {
         pwdError.textContent = "Password cannot be the same as your User ID or contain your User ID or Name.";
         event.preventDefault(); // prevent submission
-    return false;
+        return false;
     } 
     pwdError.textContent = ""; // Clear error message
     return true; // Validation successful
