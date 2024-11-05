@@ -62,38 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function validatePassword() {
-        const password = document.getElementById("password");
-        const error = document.getElementById("passwordError");
-        const regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,30}$/;
-
-        if (!regex.test(password.value)) {
-            error.textContent = "Password must be 8-30 characters long, include at least one uppercase letter, one lowercase letter, one number, and one special character.";
-        } else {
-            error.textContent = "";
-        }
-    }
-
-    function validateRepassword() {
-        const password = document.getElementById("password");
-        const repassword = document.getElementById("repassword");
-        const error = document.getElementById("repasswordError");
-
-        if (repassword.value !== password.value) {
-            error.textContent = "Passwords do not match.";
-        } else {
-            error.textContent = "";
-        }
-    }
-
     // Event listeners for onblur validation
     document.getElementById("fname").addEventListener("blur", validateFirstName);
     document.getElementById("minitial").addEventListener("blur", validateMiddleInitial);
     document.getElementById("lname").addEventListener("blur", validateLastName);
     document.getElementById("email").addEventListener("blur", validateEmail);
     document.getElementById("phone").addEventListener("blur", validatePhone);
-    document.getElementById("password").addEventListener("blur", validatePassword);
-    document.getElementById("repassword").addEventListener("blur", validateRepassword);
 
     // Form submission validation
     form.addEventListener("submit", function (event) {
@@ -103,8 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
         validateLastName();
         validateEmail();
         validatePhone();
-        validatePassword();
-        validateRepassword();
 
         // If any error message is present, prevent form submission
         const errors = document.querySelectorAll(".error");
@@ -158,17 +130,27 @@ document.getElementById('homework3form').addEventListener('submit', function(eve
 });
 
 function validatePassword() {
-  const password = document.getElementById('password').value.toLowerCase();
-  const pwdError = document.getElementById('pwdError');
-  const user = document.getElementById('user').value.toLowerCase();
-  const fname = document.getElementById('fname').value.toLowerCase();
-  const lname = document.getElementById('lname').value.toLowerCase();
+    const password = document.getElementById("password");
+    const passwordLower = document.getElementById('password').value.toLowerCase();
+    const pwdError = document.getElementById('pwdError');
+    const user = document.getElementById('user').value.toLowerCase();
+    const fname = document.getElementById('fname').value.toLowerCase();
+    const lname = document.getElementById('lname').value.toLowerCase();
 
-  if (password === user || password.includes(user) || password.includes(fname) || password.includes(lname)) {
-    pwdError.textContent = "Password cannot be the same as your User ID or contain your User ID or Name.";
-    event.preventDefault(); // prevent submission
+    const regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,30}$/;
+
+    if (!regex.test(password.value)) {
+        pwdError.textContent = "Password must be 8-30 characters long, include at least one uppercase letter, one lowercase letter, one number, and one special character.";
+    } else {
+        pwdError.textContent = "";
+    }
+}
+
+    if (passwordLower === user || passwordLower.includes(user) || passwordLower.includes(fname) || passwordLower.includes(lname)) {
+        pwdError.textContent = "Password cannot be the same as your User ID or contain your User ID or Name.";
+        event.preventDefault(); // prevent submission
     return false;
-  } 
+    } 
     pwdError.textContent = ""; // Clear error message
     return true; // Validation successful
 }
