@@ -9,9 +9,9 @@
     </style>
     <script>
         // Function to validate the first name input
-        function validateFirstNameOnTheFly() {
+        function validateFirstName() {
             var fname = document.getElementById('fname');
-            var errorMessage = document.getElementById('error-message');
+            var errorMessage = document.getElementById('fnameError');
             var fnameValue = fname.value;
 
             // Regex to match the pattern: letters, apostrophes, dashes, 1-30 characters long
@@ -28,7 +28,29 @@
                 fname.style.borderColor = '';  // Reset the border if input is valid
             }
         }
+        
+        function validatePassword() {
+            var password = document.getElementById('password');
+            var errorMessage = document.getElementById('pwdError');
+            var passwordValue = password.value;
+
+           const pwdRegex = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*\(\)\-_+=\\\/><.,`~])(?!.*\x22).{8,30}/;
+
+            // Clear any previous error messages
+            errorMessage.textContent = '';
+
+            // If the value doesn't match the regex, display an error message
+            if (!regex.test(passwordValue)) {
+                errorMessage.textContent = 'Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character, and cannot contain double quotes (").';
+                password.style.borderColor = 'red';  // Highlight input field with red border
+            } else {
+                password.style.borderColor = '';  // Reset the border if input is valid
+            }
+        }
     </script>
+
+
+    
 </head>
 <body>
     <form>
@@ -37,20 +59,22 @@
                 <td>
                     <label for="fname">First Name:</label>
                     <input type="text" id="fname" name="fname" size="30" maxlength="30" required title="1-30 characters. Letters, apostrophes, and dashes only" 
-                           oninput="validateFirstNameOnTheFly()">
+                           oninput="validateFirstName()">
                     <!-- Error message displayed here -->
-                    <div id="error-message" class="error"></div>
+                    <div id="fnameError" class="error"></div>
                 </td>
             </tr>
-             <tr>
-                <td>
-                    <label for="fname">Password:</label>
-                    <input type="text" id="pword" name="pword" size="30" maxlength="30" required title="1-30 characters. Letters, apostrophes, and dashes only" 
-                           oninput="validateFirstNameOnTheFly()">
-                    <!-- Error message displayed here -->
-                    <div id="error-message" class="error"></div>
-                </td>
+            <tr style="height:10px">
+            <td>Create Password*:</td>
+            <td><input type="password" id="password" name="password" size="30" minlength="8" maxlength="30" required title="8-30 characters. must contain at least 1 upper case letter, 1 lower case letter, 1 number and 1 special character. do not include parts of your username or name" pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*\(\)\-_+=\\\/><.,`~])(?!.*\x22).{8,30}" oninvalid="alert('password invalid');"></td>
+            <td class="error" id="pwdError"></td>
             </tr>
+            <tr style="height:10px">
+            <td>Re-enter Password*:</td>
+            <td><input type="password" id="repassword" name="repassword" size="30" minlength="8" maxlength="30" required title="must match password"></td>
+            <td></td>
+            </tr>
+            <td class="error" id="pwdError2"></td>
         </table>
         <input type="submit" value="Submit">
     </form>
