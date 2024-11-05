@@ -305,10 +305,10 @@ document.getElementById("homework3form").addEventListener("submit", function(eve
   // If no radio button is selected, show the error message and prevent form submission
   const genderError = document.getElementById("genderError");
   if (!selected) {
-    genderError.textContent = "Select Gender.";
+    genderError.style.display = "inline";
     event.preventDefault(); // Prevent form submission
   } else {
-    genderError.textContent = ""; // Hide error message if selection is made
+    genderError.style.display = "none"; // Hide error message if selection is made
   }
 });
 
