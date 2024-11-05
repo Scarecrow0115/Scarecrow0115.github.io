@@ -152,6 +152,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function validateUser() {
+        const user = document.getElementById("user");
+        const error = document.getElementById("userError");
+        const regex = /^[A-Za-z_\-]{1}[A-Za-z0-9_\-]{4,19}$/;
+
+        if (!regex.test(user.value)) {
+            error.textContent = "Invalid User ID. 5-20 characters. No spaces or special characters. Only letters, numbers (as long as the first character is NOT a number), underscores or dashes.";
+        } else {
+            error.textContent = "";
+        }
+    }
+
     // Event listeners for onblur validation
     document.getElementById("fname").addEventListener("blur", validateFirstName);
     document.getElementById("minitial").addEventListener("blur", validateMiddleInitial);
@@ -165,6 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("city").addEventListener("blur", validateCity);
     document.getElementById("state").addEventListener("blur", validateState);
     document.getElementById("zip").addEventListener("blur", validateZip);
+    document.getElementById("user").addEventListener("blur", validateUser);
 
     // Form submission validation
     form.addEventListener("submit", function (event) {
@@ -181,6 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
         validateCity();
         validateState();
         validateZip();
+        validateUser();
 
         // If any error message is present, prevent form submission
         const errors = document.querySelectorAll(".error");
