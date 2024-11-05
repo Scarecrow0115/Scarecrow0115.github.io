@@ -287,6 +287,31 @@ document.getElementById("ss").addEventListener("input", function(event) {
   event.target.value = ss;
 });
 
+document.getElementById("homework3form").addEventListener("submit", function(event) {
+  // Get the radio buttons by name
+  const gender = document.getElementsByName("gender");
+  
+  // Variable to track if any radio button is selected
+  let selected = false;
+  
+  // Check if any radio button is selected
+  for (let i = 0; i < gender.length; i++) {
+    if (gender[i].checked) {
+      selected = true;
+      break;
+    }
+  }
+  
+  // If no radio button is selected, show the error message and prevent form submission
+  const errorMessage = document.getElementById("genderError");
+  if (!selected) {
+    errorMessage.textContent = "Select Gender.";
+    event.preventDefault(); // Prevent form submission
+  } else {
+    errorMessage.textContent = ""; // Hide error message if selection is made
+  }
+});
+
 
 
 function showReview() {
