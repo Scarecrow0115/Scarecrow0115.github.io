@@ -306,9 +306,15 @@ document.getElementById("homework3form").addEventListener("submit", function(eve
   const genderError = document.getElementById("genderError");
   if (!selected) {
     genderError.style.display = "inline";
+    for (let i = 0; i < genderRadios.length; i++) {
+        genderRadios[i].style.border = "2px solid red";  // Change border to red
+    }
     event.preventDefault(); // Prevent form submission
   } else {
     genderError.style.display = "none"; // Hide error message if selection is made
+    for (let i = 0; i < genderRadios.length; i++) {
+      genderRadios[i].style.border = "";  // Reset border color
+    }
   }
 });
 
