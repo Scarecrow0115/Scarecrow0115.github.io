@@ -303,12 +303,12 @@ document.getElementById("homework3form").addEventListener("submit", function(eve
   }
   
   // If no radio button is selected, show the error message and prevent form submission
-  const errorMessage = document.getElementById("genderError");
+  const genderError = document.getElementById("genderError");
   if (!selected) {
-    errorMessage.textContent = "Select Gender.";
+    genderError.textContent = "Select Gender.";
     event.preventDefault(); // Prevent form submission
   } else {
-    errorMessage.textContent = ""; // Hide error message if selection is made
+    genderError.textContent = ""; // Hide error message if selection is made
   }
 });
 
