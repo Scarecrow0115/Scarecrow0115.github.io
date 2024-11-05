@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function validateCity() {
         const city = document.getElementById("city");
         const error = document.getElementById("cityError");
-        const regex = /^(|[A-Za-z0-9'\- ]{2,30})$/;
+        const regex = /^[A-Za-z0-9'\- ]{2,30}$/;
 
         if (!regex.test(city.value)) {
             error.textContent = "Invalid City. 2-30 characters.";
