@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function validatePhone() {
         const phone = document.getElementById("phone");
         const error = document.getElementById("phoneError");
-        const regex = /^([0-9]{3}-[0-9]{3}-[0-9]{4})$/;
+        const regex = /^(|[0-9]{3}-[0-9]{3}-[0-9]{4})$/;
 
         if (!regex.test(phone.value)) {
             error.textContent = "Invalid phone number. Format: xxx-xxx-xxxx.";
