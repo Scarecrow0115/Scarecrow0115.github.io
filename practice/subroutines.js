@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function validateMiddleInitial() {
         const minitial = document.getElementById("minitial");
         const error = document.getElementById("minitialError");
-        const regex = /^[A-Za-z ]{1,30}$/;
+        const regex = /^[A-Za-z\s]{0,1}$/;
 
         if (!regex.test(minitial.value)) {
             error.textContent = "Invalid middle initial. Only letters allowed.";
