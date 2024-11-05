@@ -132,10 +132,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function validateState() {
         const state = document.getElementById("state");
         const error = document.getElementById("stateError");
-        const regex = /^(|[A-Za-z0-9'\- ]{2,30})$/;
 
-        if (!regex.test(state.value)) {
-            error.textContent = "Invalid State. 2-30 characters.";
+        if (state.value === "") {
+            error.textContent = "Select State.";
         } else {
             error.textContent = "";
         }
