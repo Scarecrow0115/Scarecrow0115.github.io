@@ -42,6 +42,15 @@
                     <div id="error-message" class="error"></div>
                 </td>
             </tr>
+             <tr>
+                <td>
+                    <label for="fname">Password:</label>
+                    <input type="text" id="pword" name="pword" size="30" maxlength="30" required title="1-30 characters. Letters, apostrophes, and dashes only" 
+                           oninput="validateFirstNameOnTheFly()">
+                    <!-- Error message displayed here -->
+                    <div id="error-message" class="error"></div>
+                </td>
+            </tr>
         </table>
         <input type="submit" value="Submit">
     </form>
