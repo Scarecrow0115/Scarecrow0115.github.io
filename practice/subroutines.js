@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-
+/*
 document.getElementById('homework3form').addEventListener('submit', function(event) {
   const selectedDate = new Date(document.getElementById('bdate').value);
   const currentDate = new Date();
@@ -122,6 +122,7 @@ document.getElementById('homework3form').addEventListener('submit', function(eve
       event.preventDefault(); // prevent submission
   }
 });
+*/
 
 function confirmPassword() {
   const password = document.getElementById('password').value;
