@@ -186,31 +186,22 @@ document.addEventListener("DOMContentLoaded", () => {
     function confirmPassword() {
         const password = document.getElementById('password').value;
         const repassword = document.getElementById('repassword').value;
-        const pwdError2 = document.getElementById('pwdError2');
+        const error = document.getElementById('pwdError2');
       
         if (password !== repassword) {
-            pwdError2.textContent = "Passwords do not match.";
+            error.textContent = "Passwords do not match.";
             event.preventDefault(); // prevent submission
             return false;
       }
       
-        pwdError2.textContent = ""; // Clear error message
+        error.textContent = ""; // Clear error message
         return true; // Validation successful
     }
-
-    document.getElementById('repassword').addEventListener('input', confirmPassword);
-    
-    // Add event listener for form submission
-    document.getElementById('homework3form').addEventListener('submit', function(event) {
-        if (!confirmPassword()) {
-            event.preventDefault(); // Prevent submission if validation fails
-        }
-    });
 
     function validatePassword() {
         const password = document.getElementById("password");
         const passwordLower = document.getElementById('password').value.toLowerCase();
-        const pwdError = document.getElementById('pwdError');
+        const error = document.getElementById('pwdError');
         const user = document.getElementById('user').value.toLowerCase();
         const fname = document.getElementById('fname').value.toLowerCase();
         const lname = document.getElementById('lname').value.toLowerCase();
@@ -218,30 +209,19 @@ document.addEventListener("DOMContentLoaded", () => {
         const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>/?~`])[^\"]{8,30}$/;
     
         if (!passwordPattern.test(password.value)) {
-            pwdError.textContent = "Password must be 8-30 characters long, include at least one uppercase letter, one lowercase letter, one number, and one special character. No double quotes.";
+            error.textContent = "Password must be 8-30 characters long, include at least one uppercase letter, one lowercase letter, one number, and one special character. No double quotes.";
             event.preventDefault(); // prevent submission
             return false;
         }
     
         if (passwordLower === user || passwordLower.includes(user) || passwordLower.includes(fname) || passwordLower.includes(lname)) {
-            pwdError.textContent = "Password cannot be the same as your User ID or contain your User ID or Name.";
+            error.textContent = "Password cannot be the same as your User ID or contain your User ID or Name.";
             event.preventDefault(); // prevent submission
             return false;
         } 
         pwdError.textContent = ""; // Clear error message
         return true; // Validation successful
-    }
-
-    document.getElementById('password').addEventListener('input', validatePassword);
-    
-    document.getElementById('homework3form').addEventListener('submit', function(event) {
-        if (!validatePassword()) {
-            event.preventDefault(); // Prevent submission if validation fails
-        }
-    });
-        
-    
-    
+    } 
         
 
     document.getElementById("ss").addEventListener("input", function(event) {
@@ -321,6 +301,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("state").addEventListener("blur", validateState);
     document.getElementById("zip").addEventListener("blur", validateZip);
     document.getElementById("user").addEventListener("blur", validateUser);
+    document.getElementById('repassword').addEventListener('input', confirmPassword);
+    document.getElementById('password').addEventListener('input', validatePassword);
 
     // Form submission validation
     form.addEventListener("submit", function (event) {
@@ -339,6 +321,8 @@ document.addEventListener("DOMContentLoaded", () => {
         validateZip();
         validateHealth();
         validateUser();
+        confirmPassword();
+        validatePassword();
 
         // If any error message is present, prevent form submission
         const errors = document.querySelectorAll(".error");
