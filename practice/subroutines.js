@@ -2,24 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("homework3form");
 
     function validateRadio(groupName, errorId) {
-    const radios = document.getElementsByName(groupName);
-    const isChecked = Array.from(radios).some(radio => radio.checked);
-    document.getElementById(errorId).textContent = isChecked ? '' : 'Please select an option.';
-    return isChecked;
+        const radios = document.getElementsByName(groupName);
+        const isChecked = Array.from(radios).some(radio => radio.checked);
+        document.getElementById(errorId).textContent = isChecked ? '' : 'Please select an option.';
+        return isChecked;
     }
 
-// For submit validation
-form.addEventListener('submit', (event) => {
-    const isGenderValid = validateRadio('gender', 'genderError');
-    const isInsuranceValid = validateRadio('ins', 'insError');
-    const isVaccinationValid = validateRadio('vac', 'vacError');
-    
-    if (!isGenderValid || !isInsuranceValid || !isVaccinationValid) {
-        event.preventDefault();
-        alert('Please fix the errors in the form.');
-    }
-});
-    
     // Individual field validation functions
     function validateFirstName() {
         const fname = document.getElementById("fname");
@@ -214,7 +202,9 @@ form.addEventListener('submit', (event) => {
         validateState();
         validateZip();
         validateUser();
-        validateRadioGroup();
+        const isGenderValid = validateRadio('gender', 'genderError');
+        const isInsuranceValid = validateRadio('ins', 'insError');
+        const isVaccinationValid = validateRadio('vac', 'vacError');
 
         // If any error message is present, prevent form submission
         const errors = document.querySelectorAll(".error");
