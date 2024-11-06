@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Set the value of the input field to the formatted SSN
       event.target.value = ss;
     });
-/*
+
     document.getElementById('homework3form').addEventListener('submit', function(event) {
         let formValid = true;
     
@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Please correct the errors before submitting.");
         }
     });
-    */
+    
 
     // Event listeners for validation
     document.getElementById("fname").addEventListener("blur", validateFirstName);
