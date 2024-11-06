@@ -1,6 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("homework3form");
 
+    form.addEventListener("submit", (event) => {
+        let valid = true;
+
+        // Gender validation
+        const genderRadio = document.getElementsByName("gender");
+        const genderError = document.getElementById("genderError");
+        if (![...genderRadio].some(radio => radio.checked)) {
+            genderError.style.display = "block";
+            valid = false;
+        } else {
+            genderError.style.display = "none";
+        }
+        if (!valid) {
+            event.preventDefault();
+        }
+    });
     // Individual field validation functions
     function validateFirstName() {
         const fname = document.getElementById("fname");
@@ -287,22 +303,7 @@ document.getElementById("ss").addEventListener("input", function(event) {
   event.target.value = ss;
 });
 
-form.addEventListener("submit", (event) => {
-        let valid = true;
 
-        // Gender validation
-        const genderRadio = document.getElementsByName("gender");
-        const genderError = document.getElementById("genderError");
-        if (![...genderRadio].some(radio => radio.checked)) {
-            genderError.style.display = "block";
-            valid = false;
-        } else {
-            genderError.style.display = "none";
-        }
-        if (!valid) {
-            event.preventDefault();
-        }
-});
 
 
 function showReview() {
