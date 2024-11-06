@@ -302,8 +302,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("zip").addEventListener("blur", validateZip);
     document.getElementById("user").addEventListener("blur", validateUser);
     document.getElementById('repassword').addEventListener('input', confirmPassword);
+    document.getElementById('repassword').addEventListener('change', confirmPassword);
+    document.getElementById('repassword').addEventListener('blur', confirmPassword);
+    document.getElementById('repassword').addEventListener('focus', confirmPassword);
     document.getElementById('password').addEventListener('input', validatePassword);
     document.getElementById('password').addEventListener('change', validatePassword);
+    document.getElementById('password').addEventListener('blur', validatePassword);
+    document.getElementById('password').addEventListener('focus', validatePassword);
 
     // Form submission validation
     form.addEventListener("submit", function (event) {
