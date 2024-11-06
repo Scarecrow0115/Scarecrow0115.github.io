@@ -299,7 +299,10 @@ form.addEventListener("submit", (event) => {
         } else {
             genderError.style.display = "none";
         }
-
+        if (!valid) {
+            event.preventDefault();
+        }
+});
 
 
 function showReview() {
