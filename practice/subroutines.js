@@ -1,5 +1,6 @@
-// Run this code when the page loads
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("homework3form");
+
     // Get the "validate" button and "submit" button by their IDs
     const validateButton = document.getElementById("validate");
     const submitButton = document.getElementById("submit");
@@ -11,79 +12,6 @@ window.onload = function() {
     function validateForm() {
         // Assume all fields are valid initially
         let isValid = true;
-
-        // Get form fields by their IDs
-        const nameField = document.getElementById("fname");
-        const emailField = document.getElementById("email");
-        const passwordField = document.getElementById("password");
-
-        // Validate Name: Ensure it is not empty
-        if (nameField.value.trim() === "") {
-            alert("Name field cannot be empty.");
-            isValid = false;
-        }
-
-
-
-        // If all fields are valid, show the submit button
-        if (isValid) {
-            submitButton.style.display = "block";
-        } else {
-            submitButton.style.display = "none";
-        }
-    }
-
-    // Add event listener to the "validate" button to validate fields on click
-    validateButton.addEventListener("click", validateForm);
-};
-
-
-document.getElementById('homework3form').addEventListener('submit', function(event) {
-    let formValid = true;
-
-    // Gender Validation
-    const genderRadios = document.getElementsByName('gender');
-    const genderError = document.getElementById('genderError');
-    const genderChecked = Array.from(genderRadios).some(radio => radio.checked);
-    if (!genderChecked) {
-        genderError.textContent = 'Please select your gender.';
-        formValid = false;
-    } else {
-        genderError.textContent = '';
-    }
-
-    // Insurance Validation
-    const insRadios = document.getElementsByName('ins');
-    const insError = document.getElementById('insError');
-    const insChecked = Array.from(insRadios).some(radio => radio.checked);
-    if (!insChecked) {
-        insError.textContent = 'Please select your insurance status.';
-        formValid = false;
-    } else {
-        insError.textContent = '';
-    }
-
-    // Vaccination Validation
-    const vacRadios = document.getElementsByName('vac');
-    const vacError = document.getElementById('vacError');
-    const vacChecked = Array.from(vacRadios).some(radio => radio.checked);
-    if (!vacChecked) {
-        vacError.textContent = 'Please select your vaccination status.';
-        formValid = false;
-    } else {
-        vacError.textContent = '';
-    }
-
-    // Additional form validations like text inputs can go here
-
-    if (!formValid) {
-        event.preventDefault();  // Prevent form submission if validation fails
-        alert("Please correct the errors before submitting.");
-    }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("homework3form");
 
     // Individual field validation functions
     function validateFirstName() {
@@ -247,6 +175,128 @@ document.addEventListener("DOMContentLoaded", () => {
             error.textContent = "";
         }
     }
+    function confirmPassword() {
+      const password = document.getElementById('password').value;
+      const repassword = document.getElementById('repassword').value;
+      const pwdError2 = document.getElementById('pwdError2');
+      
+      if (password !== repassword) {
+        pwdError2.textContent = "Passwords do not match.";
+        event.preventDefault(); // prevent submission
+        return false;
+      }
+      
+        pwdError2.textContent = ""; // Clear error message
+        return true; // Validation successful
+    }
+
+    document.getElementById('repassword').addEventListener('input', confirmPassword);
+    
+    // Add event listener for form submission
+    document.getElementById('homework3form').addEventListener('submit', function(event) {
+        if (!confirmPassword()) {
+            event.preventDefault(); // Prevent submission if validation fails
+        }
+    });
+
+    function validatePassword() {
+        const password = document.getElementById("password");
+        const passwordLower = document.getElementById('password').value.toLowerCase();
+        const pwdError = document.getElementById('pwdError');
+        const user = document.getElementById('user').value.toLowerCase();
+        const fname = document.getElementById('fname').value.toLowerCase();
+        const lname = document.getElementById('lname').value.toLowerCase();
+    
+        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>/?~`])[^\"]{8,30}$/;
+    
+        if (!passwordPattern.test(password.value)) {
+            pwdError.textContent = "Password must be 8-30 characters long, include at least one uppercase letter, one lowercase letter, one number, and one special character. No double quotes.";
+            event.preventDefault(); // prevent submission
+            return false;
+        }
+    
+        if (passwordLower === user || passwordLower.includes(user) || passwordLower.includes(fname) || passwordLower.includes(lname)) {
+            pwdError.textContent = "Password cannot be the same as your User ID or contain your User ID or Name.";
+            event.preventDefault(); // prevent submission
+            return false;
+        } 
+        pwdError.textContent = ""; // Clear error message
+        return true; // Validation successful
+    }
+
+    document.getElementById('password').addEventListener('input', validatePassword);
+    
+    document.getElementById('homework3form').addEventListener('submit', function(event) {
+        if (!validatePassword()) {
+            event.preventDefault(); // Prevent submission if validation fails
+        }
+    });
+
+    function slide(value) {
+      document.getElementById("health").innerHTML = value; 
+    }
+
+document.getElementById("ss").addEventListener("input", function(event) {
+  // Get the current value of the input field
+  let ss = event.target.value;
+
+  // Remove non-numeric characters
+  ss = ss.replace(/\D/g, "");
+
+  // Add dashes after every 3rd and 5th character
+  if (ss.length > 3 && ss.length <= 5) {
+    ss = ss.slice(0, 3) + '-' + ss.slice(3);
+  } else if (ss.length > 5) {
+    ss = ss.slice(0, 3) + '-' + ss.slice(3, 5) + '-' + ss.slice(5, 9);
+  }
+
+  // Set the value of the input field to the formatted SSN
+  event.target.value = ss;
+});
+
+    document.getElementById('homework3form').addEventListener('submit', function(event) {
+        let formValid = true;
+    
+        // Gender Validation
+        const genderRadios = document.getElementsByName('gender');
+        const genderError = document.getElementById('genderError');
+        const genderChecked = Array.from(genderRadios).some(radio => radio.checked);
+        if (!genderChecked) {
+            genderError.textContent = 'Please select your gender.';
+            formValid = false;
+        } else {
+            genderError.textContent = '';
+        }
+    
+        // Insurance Validation
+        const insRadios = document.getElementsByName('ins');
+        const insError = document.getElementById('insError');
+        const insChecked = Array.from(insRadios).some(radio => radio.checked);
+        if (!insChecked) {
+            insError.textContent = 'Please select your insurance status.';
+            formValid = false;
+        } else {
+            insError.textContent = '';
+        }
+    
+        // Vaccination Validation
+        const vacRadios = document.getElementsByName('vac');
+        const vacError = document.getElementById('vacError');
+        const vacChecked = Array.from(vacRadios).some(radio => radio.checked);
+        if (!vacChecked) {
+            vacError.textContent = 'Please select your vaccination status.';
+            formValid = false;
+        } else {
+            vacError.textContent = '';
+        }
+    
+        // Additional form validations like text inputs can go here
+    
+        if (!formValid) {
+            event.preventDefault();  // Prevent form submission if validation fails
+            alert("Please correct the errors before submitting.");
+        }
+    });
 
     // Event listeners for onblur validation
     document.getElementById("fname").addEventListener("blur", validateFirstName);
@@ -290,86 +340,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
+
+    // Add event listener to the "validate" button to validate fields on click
+    validateButton.addEventListener("click", validateForm);
 });
 
-function confirmPassword() {
-  const password = document.getElementById('password').value;
-  const repassword = document.getElementById('repassword').value;
-  const pwdError2 = document.getElementById('pwdError2');
-  
-  if (password !== repassword) {
-    pwdError2.textContent = "Passwords do not match.";
-    event.preventDefault(); // prevent submission
-    return false;
-  }
-  
-    pwdError2.textContent = ""; // Clear error message
-    return true; // Validation successful
-}
 
-document.getElementById('repassword').addEventListener('input', confirmPassword);
-
-// Add event listener for form submission
-document.getElementById('homework3form').addEventListener('submit', function(event) {
-    if (!confirmPassword()) {
-        event.preventDefault(); // Prevent submission if validation fails
-    }
-});
-
-function validatePassword() {
-    const password = document.getElementById("password");
-    const passwordLower = document.getElementById('password').value.toLowerCase();
-    const pwdError = document.getElementById('pwdError');
-    const user = document.getElementById('user').value.toLowerCase();
-    const fname = document.getElementById('fname').value.toLowerCase();
-    const lname = document.getElementById('lname').value.toLowerCase();
-
-    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>/?~`])[^\"]{8,30}$/;
-
-    if (!passwordPattern.test(password.value)) {
-        pwdError.textContent = "Password must be 8-30 characters long, include at least one uppercase letter, one lowercase letter, one number, and one special character. No double quotes.";
-        event.preventDefault(); // prevent submission
-        return false;
-    }
-
-    if (passwordLower === user || passwordLower.includes(user) || passwordLower.includes(fname) || passwordLower.includes(lname)) {
-        pwdError.textContent = "Password cannot be the same as your User ID or contain your User ID or Name.";
-        event.preventDefault(); // prevent submission
-        return false;
-    } 
-    pwdError.textContent = ""; // Clear error message
-    return true; // Validation successful
-}
-
-document.getElementById('password').addEventListener('input', validatePassword);
-
-document.getElementById('homework3form').addEventListener('submit', function(event) {
-    if (!validatePassword()) {
-        event.preventDefault(); // Prevent submission if validation fails
-    }
-});
-
-function slide(value) {
-  document.getElementById("health").innerHTML = value; 
-}
-
-document.getElementById("ss").addEventListener("input", function(event) {
-  // Get the current value of the input field
-  let ss = event.target.value;
-
-  // Remove non-numeric characters
-  ss = ss.replace(/\D/g, "");
-
-  // Add dashes after every 3rd and 5th character
-  if (ss.length > 3 && ss.length <= 5) {
-    ss = ss.slice(0, 3) + '-' + ss.slice(3);
-  } else if (ss.length > 5) {
-    ss = ss.slice(0, 3) + '-' + ss.slice(3, 5) + '-' + ss.slice(5, 9);
-  }
-
-  // Set the value of the input field to the formatted SSN
-  event.target.value = ss;
-});
 
 
 
