@@ -237,9 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
         
     */
-    function slide(value) {
-      document.getElementById("health").innerHTML = value; 
-    }
+    
         
 
     document.getElementById("ss").addEventListener("input", function(event) {
@@ -352,6 +350,10 @@ document.addEventListener("DOMContentLoaded", () => {
    // validateButton.addEventListener("click", validateForm);
     //};
 });
+
+function slide(value) {
+      document.getElementById("health").innerHTML = value; 
+    }
 
 
 
