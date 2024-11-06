@@ -1,57 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("homework3form");
 
-    // Individual validation functions for radio groups
-    function validateRadioGroup(radioName, errorId, errorMessage) {
-        const radios = document.getElementsByName(radioName);
-        const errorElement = document.getElementById(errorId);
-        if ([...radios].some(radio => radio.checked)) {
-            errorElement.style.display = "none";
-        } else {
-            errorElement.style.display = "block";
-            errorElement.textContent = errorMessage;
-        }
+    function validateRadio(groupName, errorId) {
+    const radios = document.getElementsByName(groupName);
+    const isChecked = Array.from(radios).some(radio => radio.checked);
+    document.getElementById(errorId).textContent = isChecked ? '' : 'Please select an option.';
+    return isChecked;
     }
 
-    // Event listeners for radio buttons to validate on the fly
-    document.querySelectorAll('input[name="gender"]').forEach(radio => {
-        radio.addEventListener("input", () => validateRadioGroup("gender", "genderError", "Please select a gender."));
-    });
+// For submit validation
+form.addEventListener('submit', (event) => {
+    const isGenderValid = validateRadio('gender', 'genderError');
+    const isInsuranceValid = validateRadio('ins', 'insError');
+    const isVaccinationValid = validateRadio('vac', 'vacError');
     
-    document.querySelectorAll('input[name="ins"]').forEach(radio => {
-        radio.addEventListener("input", () => validateRadioGroup("ins", "insError", "Please select an insurance status."));
-    });
-
-    document.querySelectorAll('input[name="vac"]').forEach(radio => {
-        radio.addEventListener("input", () => validateRadioGroup("vac", "vacError", "Please select a vaccination status."));
-    });
-
-    // Validate all radio groups on form submission
-    form.addEventListener("submit", (event) => {
-        let valid = true;
-
-        if (![...document.getElementsByName("gender")].some(radio => radio.checked)) {
-            document.getElementById("genderError").style.display = "block";
-            document.getElementById("genderError").textContent = "Please select a gender.";
-            valid = false;
-        }
-
-        if (![...document.getElementsByName("ins")].some(radio => radio.checked)) {
-            document.getElementById("insError").style.display = "block";
-            document.getElementById("insError").textContent = "Please select an insurance status.";
-            valid = false;
-        }
-
-        if (![...document.getElementsByName("vac")].some(radio => radio.checked)) {
-            document.getElementById("vacError").style.display = "block";
-            document.getElementById("vacError").textContent = "Please select a vaccination status.";
-            valid = false;
-        }
-
-        if (!valid) {
-            event.preventDefault();
-        }
-    });
+    if (!isGenderValid || !isInsuranceValid || !isVaccinationValid) {
+        event.preventDefault();
+        alert('Please fix the errors in the form.');
+    }
+});
+    
     // Individual field validation functions
     function validateFirstName() {
         const fname = document.getElementById("fname");
