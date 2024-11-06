@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /*    
+        
     function confirmPassword() {
         const password = document.getElementById('password').value;
         const repassword = document.getElementById('repassword').value;
@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
         
-    */
+    
     
         
 
