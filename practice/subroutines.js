@@ -303,6 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("user").addEventListener("blur", validateUser);
     document.getElementById('repassword').addEventListener('input', confirmPassword);
     document.getElementById('password').addEventListener('input', validatePassword);
+    document.getElementById('password').addEventListener('change', validatePassword);
 
     // Form submission validation
     form.addEventListener("submit", function (event) {
