@@ -1,10 +1,36 @@
 document.getElementById('homework3form').addEventListener('submit', function(event) {
+    const radios = document.getElementsByName('gender');
+    const error = document.getElementById('genderError');
+    const isChecked = Array.from(radios).some(radio => radio.checked);
+
+    if (!isChecked) {
+        error.textContent = 'Please select your gender.';
+        event.preventDefault();  // Prevent form submission
+    } else {
+        error.textContent = '';  // Clear error if valid
+    }
+});
+
+document.getElementById('homework3form').addEventListener('submit', function(event) {
     const radios = document.getElementsByName('ins');
     const error = document.getElementById('insError');
     const isChecked = Array.from(radios).some(radio => radio.checked);
 
     if (!isChecked) {
         error.textContent = 'Please select your insurance status.';
+        event.preventDefault();  // Prevent form submission
+    } else {
+        error.textContent = '';  // Clear error if valid
+    }
+});
+
+document.getElementById('homework3form').addEventListener('submit', function(event) {
+    const radios = document.getElementsByName('vac');
+    const error = document.getElementById('vacError');
+    const isChecked = Array.from(radios).some(radio => radio.checked);
+
+    if (!isChecked) {
+        error.textContent = 'Please select your vaccination status.';
         event.preventDefault();  // Prevent form submission
     } else {
         error.textContent = '';  // Clear error if valid
