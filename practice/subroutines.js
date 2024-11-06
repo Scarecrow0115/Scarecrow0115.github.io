@@ -175,6 +175,9 @@ document.addEventListener("DOMContentLoaded", () => {
             error.textContent = "";
         }
     }
+
+
+        
     function confirmPassword() {
       const password = document.getElementById('password').value;
       const repassword = document.getElementById('repassword').value;
@@ -231,10 +234,12 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault(); // Prevent submission if validation fails
         }
     });
+        
 
     function slide(value) {
       document.getElementById("health").innerHTML = value; 
     }
+        
 
     document.getElementById("ss").addEventListener("input", function(event) {
       // Get the current value of the input field
@@ -253,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Set the value of the input field to the formatted SSN
       event.target.value = ss;
     });
-
+/*
     document.getElementById('homework3form').addEventListener('submit', function(event) {
         let formValid = true;
     
@@ -297,6 +302,7 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Please correct the errors before submitting.");
         }
     });
+    */
 
     // Event listeners for onblur validation
     document.getElementById("fname").addEventListener("blur", validateFirstName);
