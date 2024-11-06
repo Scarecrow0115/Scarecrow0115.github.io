@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("homework3form");
-
+/*
     // Get the "validate" button and "submit" button by their IDs
     const validateButton = document.getElementById("validate");
     const submitButton = document.getElementById("submit");
@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function validateForm() {
         // Assume all fields are valid initially
         let isValid = true;
-
+*/
+    
     // Individual field validation functions
     function validateFirstName() {
         const fname = document.getElementById("fname");
@@ -348,8 +349,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Add event listener to the "validate" button to validate fields on click
-    validateButton.addEventListener("click", validateForm);
-    };
+   // validateButton.addEventListener("click", validateForm);
+    //};
 });
 
 
