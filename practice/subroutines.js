@@ -13,7 +13,7 @@ window.onload = function() {
         let isValid = true;
 
         // Get form fields by their IDs
-        const nameField = document.getElementById("name");
+        const nameField = document.getElementById("fname");
         const emailField = document.getElementById("email");
         const passwordField = document.getElementById("password");
 
