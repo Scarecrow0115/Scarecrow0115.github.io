@@ -312,7 +312,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('user').addEventListener('change', validatePassword);
     document.getElementById('fname').addEventListener('change', validatePassword);
     document.getElementById('lname').addEventListener('change', validatePassword);
-
+    document.getElementById('user').addEventListener('input', validatePassword);
+    document.getElementById('fname').addEventListener('input', validatePassword);
+    document.getElementById('lname').addEventListener('input', validatePassword);
+    document.getElementById('password').addEventListener('input', confirmPassword);
+    document.getElementById('repassword').addEventListener('input', validatePassword);
+    
     // Form submission validation
     form.addEventListener("submit", function (event) {
         // Run all validations before submitting
