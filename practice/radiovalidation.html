@@ -1,0 +1,27 @@
+<script>
+function validateForm() {
+  var x = document.forms["myForm"]["radioGroupName"].value;
+  if (x == "") {
+  document.getElementById("message").innerHTML = "Select atleast one option";
+  } else {
+  document.getElementById("message").innerHTML = "Submitted Successfully";
+
+  }
+  
+}
+</script>
+<form name="myForm" action="/action_page_post.php"
+onsubmit="return validateForm()" method="post">
+<fieldset>
+<input type="radio" name="coffee" value="StronglyDisagree">Strongly Disagree<br>
+<input type="radio" name="coffee" value="Disagree">Disagree<br>
+<input type="radio" name="coffee" value="Neither">Neither Agree nor Disagree<br>
+<input type="radio" name="coffee" value="Agree">Agree<br>
+<input type="radio" name="coffee" value="StronglyAgree">Strongly Agree<br>
+
+<p id="message"></p>
+</fieldset>
+
+  
+<input type="submit" value="Submit">
+</form>
