@@ -1,39 +1,44 @@
 document.getElementById('homework3form').addEventListener('submit', function(event) {
-    const radios = document.getElementsByName('gender');
-    const error = document.getElementById('genderError');
-    const isChecked = Array.from(radios).some(radio => radio.checked);
+    let formValid = true;
 
-    if (!isChecked) {
-        error.textContent = 'Please select your gender.';
-        event.preventDefault();  // Prevent form submission
+    // Gender Validation
+    const genderRadios = document.getElementsByName('gender');
+    const genderError = document.getElementById('genderError');
+    const genderChecked = Array.from(genderRadios).some(radio => radio.checked);
+    if (!genderChecked) {
+        genderError.textContent = 'Please select your gender.';
+        formValid = false;
     } else {
-        error.textContent = '';  // Clear error if valid
+        genderError.textContent = '';
     }
-});
 
-document.getElementById('homework3form').addEventListener('submit', function(event) {
-    const radios = document.getElementsByName('ins');
-    const error = document.getElementById('insError');
-    const isChecked = Array.from(radios).some(radio => radio.checked);
-
-    if (!isChecked) {
-        error.textContent = 'Please select your insurance status.';
-        event.preventDefault();  // Prevent form submission
+    // Insurance Validation
+    const insRadios = document.getElementsByName('ins');
+    const insError = document.getElementById('insError');
+    const insChecked = Array.from(insRadios).some(radio => radio.checked);
+    if (!insChecked) {
+        insError.textContent = 'Please select your insurance status.';
+        formValid = false;
     } else {
-        error.textContent = '';  // Clear error if valid
+        insError.textContent = '';
     }
-});
 
-document.getElementById('homework3form').addEventListener('submit', function(event) {
-    const radios = document.getElementsByName('vac');
-    const error = document.getElementById('vacError');
-    const isChecked = Array.from(radios).some(radio => radio.checked);
-
-    if (!isChecked) {
-        error.textContent = 'Please select your vaccination status.';
-        event.preventDefault();  // Prevent form submission
+    // Vaccination Validation
+    const vacRadios = document.getElementsByName('vac');
+    const vacError = document.getElementById('vacError');
+    const vacChecked = Array.from(vacRadios).some(radio => radio.checked);
+    if (!vacChecked) {
+        vacError.textContent = 'Please select your vaccination status.';
+        formValid = false;
     } else {
-        error.textContent = '';  // Clear error if valid
+        vacError.textContent = '';
+    }
+
+    // Additional form validations like text inputs can go here
+
+    if (!formValid) {
+        event.preventDefault();  // Prevent form submission if validation fails
+        alert("Please correct the errors before submitting.");
     }
 });
 
