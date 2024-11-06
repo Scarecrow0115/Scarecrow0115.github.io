@@ -165,6 +165,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function validateHealth() {
+        const healthslider = document.getElementById("healthslider");
+    }
+
     function validateUser() {
         const user = document.getElementById("user");
         const error = document.getElementById("userError");
@@ -333,6 +337,7 @@ document.addEventListener("DOMContentLoaded", () => {
         validateCity();
         validateState();
         validateZip();
+        validateHealth();
         validateUser();
 
         // If any error message is present, prevent form submission
