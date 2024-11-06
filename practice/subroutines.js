@@ -177,16 +177,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-        
+    /*    
     function confirmPassword() {
-      const password = document.getElementById('password').value;
-      const repassword = document.getElementById('repassword').value;
-      const pwdError2 = document.getElementById('pwdError2');
+        const password = document.getElementById('password').value;
+        const repassword = document.getElementById('repassword').value;
+        const pwdError2 = document.getElementById('pwdError2');
       
-      if (password !== repassword) {
-        pwdError2.textContent = "Passwords do not match.";
-        event.preventDefault(); // prevent submission
-        return false;
+        if (password !== repassword) {
+            pwdError2.textContent = "Passwords do not match.";
+            event.preventDefault(); // prevent submission
+            return false;
       }
       
         pwdError2.textContent = ""; // Clear error message
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
         
-
+    */
     function slide(value) {
       document.getElementById("health").innerHTML = value; 
     }
