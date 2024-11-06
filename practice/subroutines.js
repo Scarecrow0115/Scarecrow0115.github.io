@@ -236,23 +236,23 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("health").innerHTML = value; 
     }
 
-document.getElementById("ss").addEventListener("input", function(event) {
-  // Get the current value of the input field
-  let ss = event.target.value;
-
-  // Remove non-numeric characters
-  ss = ss.replace(/\D/g, "");
-
-  // Add dashes after every 3rd and 5th character
-  if (ss.length > 3 && ss.length <= 5) {
-    ss = ss.slice(0, 3) + '-' + ss.slice(3);
-  } else if (ss.length > 5) {
-    ss = ss.slice(0, 3) + '-' + ss.slice(3, 5) + '-' + ss.slice(5, 9);
-  }
-
-  // Set the value of the input field to the formatted SSN
-  event.target.value = ss;
-});
+    document.getElementById("ss").addEventListener("input", function(event) {
+      // Get the current value of the input field
+      let ss = event.target.value;
+    
+      // Remove non-numeric characters
+      ss = ss.replace(/\D/g, "");
+    
+      // Add dashes after every 3rd and 5th character
+      if (ss.length > 3 && ss.length <= 5) {
+        ss = ss.slice(0, 3) + '-' + ss.slice(3);
+      } else if (ss.length > 5) {
+        ss = ss.slice(0, 3) + '-' + ss.slice(3, 5) + '-' + ss.slice(5, 9);
+      }
+    
+      // Set the value of the input field to the formatted SSN
+      event.target.value = ss;
+    });
 
     document.getElementById('homework3form').addEventListener('submit', function(event) {
         let formValid = true;
@@ -343,8 +343,8 @@ document.getElementById("ss").addEventListener("input", function(event) {
 
     // Add event listener to the "validate" button to validate fields on click
     validateButton.addEventListener("click", validateForm);
+    };
 });
-
 
 
 
