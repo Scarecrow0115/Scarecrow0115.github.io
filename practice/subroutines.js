@@ -1,12 +1,18 @@
+document.getElementById('homework3form').addEventListener('submit', function(event) {
+    const radios = document.getElementsByName('ins');
+    const error = document.getElementById('insError');
+    const isChecked = Array.from(radios).some(radio => radio.checked);
+
+    if (!isChecked) {
+        error.textContent = 'Please select your insurance status.';
+        event.preventDefault();  // Prevent form submission
+    } else {
+        error.textContent = '';  // Clear error if valid
+    }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("homework3form");
-
-    function validateRadio(groupName, errorId) {
-        const radios = document.getElementsByName(groupName);
-        const isChecked = Array.from(radios).some(radio => radio.checked);
-        document.getElementById(errorId).textContent = isChecked ? '' : 'Please select an option.';
-        return isChecked;
-    }
 
     // Individual field validation functions
     function validateFirstName() {
@@ -202,9 +208,6 @@ document.addEventListener("DOMContentLoaded", () => {
         validateState();
         validateZip();
         validateUser();
-        const isGenderValid = validateRadio('gender', 'genderError');
-        const isInsuranceValid = validateRadio('ins', 'insError');
-        const isVaccinationValid = validateRadio('vac', 'vacError');
 
         // If any error message is present, prevent form submission
         const errors = document.querySelectorAll(".error");
