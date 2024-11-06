@@ -168,7 +168,7 @@ Description: patient registration form.
                     <td>Gender*:</td>
                 </tr>
                 <tr style="height:10px">
-                    <td><input type="radio" id="male" name="gender" value="Male" required title="select your gender"><label for="male">Male</label></td>
+                    <td><input type="radio" id="male" name="gender" value="Male" required title="select your gender" oninvalid="this.setCustomValidity('Please select a gender.')" oninput="this.setCustomValidity('')"><label for="male">Male</label></td>
                 </tr>
                 <tr style="height:10px">
                     <td><input type="radio" id="female" name="gender" value="Female" required title="select your gender"><label for="female">Female</label>
