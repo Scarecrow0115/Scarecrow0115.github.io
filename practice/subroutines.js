@@ -1,3 +1,43 @@
+// Run this code when the page loads
+window.onload = function() {
+    // Get the "validate" button and "submit" button by their IDs
+    const validateButton = document.getElementById("validate");
+    const submitButton = document.getElementById("submit");
+
+    // Initially hide the submit button
+    submitButton.style.display = "none";
+
+    // Function to validate form fields
+    function validateForm() {
+        // Assume all fields are valid initially
+        let isValid = true;
+
+        // Get form fields by their IDs
+        const nameField = document.getElementById("name");
+        const emailField = document.getElementById("email");
+        const passwordField = document.getElementById("password");
+
+        // Validate Name: Ensure it is not empty
+        if (nameField.value.trim() === "") {
+            alert("Name field cannot be empty.");
+            isValid = false;
+        }
+
+
+
+        // If all fields are valid, show the submit button
+        if (isValid) {
+            submitButton.style.display = "block";
+        } else {
+            submitButton.style.display = "none";
+        }
+    }
+
+    // Add event listener to the "validate" button to validate fields on click
+    validateButton.addEventListener("click", validateForm);
+};
+
+
 document.getElementById('homework3form').addEventListener('submit', function(event) {
     let formValid = true;
 
