@@ -287,7 +287,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     */
 
-    // Event listeners for onblur validation
+    // Event listeners for validation
     document.getElementById("fname").addEventListener("blur", validateFirstName);
     document.getElementById("minitial").addEventListener("blur", validateMiddleInitial);
     document.getElementById("lname").addEventListener("blur", validateLastName);
@@ -309,6 +309,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('password').addEventListener('change', validatePassword);
     document.getElementById('password').addEventListener('blur', validatePassword);
     document.getElementById('password').addEventListener('focus', validatePassword);
+    document.getElementById('user').addEventListener('change', validatePassword);
+    document.getElementById('fname').addEventListener('change', validatePassword);
+    document.getElementById('lname').addEventListener('change', validatePassword);
 
     // Form submission validation
     form.addEventListener("submit", function (event) {
