@@ -168,11 +168,11 @@ Description: patient registration form.
                     <td>Gender*:</td>
                 </tr>
                 <tr style="height:10px">
-                    <td><input type="radio" id="male" name="gender" value="Male" required title="select your gender" oninvalid="this.setCustomValidity('Please select a gender.')" oninput="this.setCustomValidity('')"><label for="male">Male</label></td>
+                    <td><input type="radio" id="male" name="gender" value="Male" required title="select your gender"><label for="male">Male</label></td>
                 </tr>
                 <tr style="height:10px">
                     <td><input type="radio" id="female" name="gender" value="Female" required title="select your gender"><label for="female">Female</label>
-                    <div id="genderError" class="error" style="color: red; display: none;">Please select a gender.</div></td>
+                    <div id="genderError" class="error"></div></td>
                 </tr>  
                     
                 <tr>
@@ -182,7 +182,7 @@ Description: patient registration form.
                     <td><input type="radio" id="hasins" name="ins" value="Hasins" required title="select response"><label for="hasins">Yes</label></td>
                 </tr>
                 <tr style="height:10px">
-                    <td><input type="radio" id="noins" name="ins" value="Noins" title="select response"><label for="noins">No</label>
+                    <td><input type="radio" id="noins" name="ins" value="Noins" required title="select response"><label for="noins">No</label>
                     <div id="insError" class="error"></div></td>
                 </tr>    
                     
@@ -190,10 +190,10 @@ Description: patient registration form.
                     <td>Are you vaccinated?*</td>
                 </tr>
                 <tr style="height:10px">
-                    <td><input type="radio" id="yesvac" name="vac" value="Yesvac" required title="select response" oninvalid="alert('select vaccination status');"><label for="yesvac">Yes</label></td>
+                    <td><input type="radio" id="yesvac" name="vac" value="Yesvac" required title="select response"><label for="yesvac">Yes</label></td>
                 </tr>
                 <tr style="height:10px">
-                    <td><input type="radio" id="novac" name="vac" value="Novac" title="select response"><label for="novac">No</label>
+                    <td><input type="radio" id="novac" name="vac" value="Novac" required title="select response"><label for="novac">No</label>
                     <div id="vacError" class="error"></div></td>
                 </tr>   
                     
