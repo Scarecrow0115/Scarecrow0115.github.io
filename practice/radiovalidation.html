@@ -6,7 +6,6 @@
     <style>
         .error {
             color: red;
-            display: none;
         }
     </style>
 </head>
@@ -25,7 +24,7 @@
         <tr style="height:10px">
             <td><input type="radio" id="female" name="gender" value="Female" title="select your gender">
                 <label for="female">Female</label>
-                <div id="genderError" class="error">Please select your gender.</div>
+                <div id="genderError" class="error"></div>
             </td>
         </tr>
     </table>
@@ -36,7 +35,7 @@
 
 </body>
 </html>
-
+<!--
 <script>
     document.getElementById("validate").addEventListener("click", function (event) {
     //event.preventDefault(); // Prevent any default behavior, including form submission
@@ -70,4 +69,41 @@
             errorMessage.style.display = "none"; // Hide error message on selection
         });
     }
+</script> -->
+<script>
+    document.getElementById("validate").addEventListener("click", function (event) {
+    // Prevent any default behavior, like form submission if necessary
+    // event.preventDefault();
+
+    // Check if any radio button in the "gender" group is selected
+    const radioButtons = document.getElementsByName("gender");
+    let isSelected = false;
+
+    // Loop through radio buttons to see if any are checked
+    for (const radio of radioButtons) {
+        if (radio.checked) {
+            isSelected = true;
+            break;
+        }
+    }
+
+    // Display or clear the error message based on selection
+    const errorMessage = document.getElementById("genderError");
+    if (!isSelected) {
+        errorMessage.textContent = "Please select your gender."; // Show error message if none selected
+    } else {
+        errorMessage.textContent = ""; // Clear error message if a selection is made
+        console.log("Gender selected. Form is valid.");
+    }
+});
+
+    // Add an input event listener to each radio button to clear the error message when a selection is made
+    const radioButtons = document.getElementsByName("gender");
+    for (const radio of radioButtons) {
+        radio.addEventListener("input", function () {
+            const errorMessage = document.getElementById("genderError");
+            errorMessage.textContent = ""; // Clear error message on selection
+        });
+    }
 </script>
+    
