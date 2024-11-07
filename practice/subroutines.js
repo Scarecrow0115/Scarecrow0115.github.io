@@ -332,7 +332,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('repassword').addEventListener('input', validatePassword);
         
         // Form submission validation
-        form.addEventListener("validate", function (event) {
+        //form.addEventListener("submit", function (event) {
+        function validateData() {
             // Run all validations before submitting
             validateFirstName();
             validateMiddleInitial();
@@ -362,7 +363,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     submitButton.style.display = "block";
                 }
             }
-        });
+        //});
+        }
     // Add event listener to the "validate" button to validate fields on click
    // validateButton.addEventListener("click", validateForm);
     //};
