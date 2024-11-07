@@ -389,6 +389,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
         });
+        // Add an input event listener to each radio button to hide the error message when a selection is made
+        const radioButtons = document.getElementsByName("gender");
+        for (const radio of radioButtons) {
+            radio.addEventListener("input", function () {
+                const errorMessage = document.getElementById("genderError");
+                errorMessage.style.display = "none"; // Hide error message on selection
+            });
+        }
         //}
     // Add event listener to the "validate" button to validate fields on click
    // validateButton.addEventListener("click", validateForm);
