@@ -1,60 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Validation</title>
-    <style>
-        .error {
-            color: red;
-            font-size: 0.9em;
-        }
-    </style>
-</head>
-<body>
-    <form id="myForm">
-        <div>
-            <label for="fname">First Name:</label>
-            <input type="text" id="fname" name="fname" required>
-            <span class="error"></span>
-        </div>
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <span class="error"></span>
-        </div>
-        <div>
-            <label for="phone">Phone:</label>
-            <input type="text" id="phone" name="phone" required>
-            <span class="error"></span>
-        </div>
-        <button type="submit">Submit</button>
-    </form>
+<form id="myForm">
+    <p>Please select an option:</p>
+    <input type="radio" id="option1" name="choice" value="Option 1">
+    <label for="option1">Option 1</label><br>
 
-    <script>
-        const form = document.getElementById('myForm');
-        
-        form.addEventListener('submit', function(event) {
-            let valid = true;
-            
-            const requiredFields = document.querySelectorAll('[required]');
-            
-            requiredFields.forEach(field => {
-                const errorMessage = field.nextElementSibling;
-                
-                if (!field.value.trim()) {
-                    errorMessage.textContent = `${field.name} is required.`;
-                    valid = false;
-                } else {
-                    errorMessage.textContent = ''; // Clear error if field is filled
-                }
-            });
-            
-            if (!valid) {
-                event.preventDefault(); // Prevent form submission
-                alert("Please fill out all required fields.");
-            }
-        });
-    </script>
-</body>
-</html>
+    <input type="radio" id="option2" name="choice" value="Option 2">
+    <label for="option2">Option 2</label><br>
+
+    <input type="radio" id="option3" name="choice" value="Option 3">
+    <label for="option3">Option 3</label><br>
+
+    <!-- Error message span -->
+    <span id="radioError" style="color: red; display: none;">Please select an option.</span><br>
+
+    <!-- Validate button -->
+    <button id="validate">Validate</button>
+</form>
+
+<script>
+    document.getElementById("validate").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Check if any radio button in the "choice" group is selected
+    const radioButtons = document.getElementsByName("choice");
+    let isSelected = false;
+    
+    // Loop through radio buttons to see if any are checked
+    for (const radio of radioButtons) {
+        if (radio.checked) {
+            isSelected = true;
+            break;
+        }
+    }
+
+    // Display error message if none are selected
+    const errorMessage = document.getElementById("radioError");
+    if (!isSelected) {
+        errorMessage.style.display = "inline"; // Show error message
+    } else {
+        errorMessage.style.display = "none"; // Hide error message
+        console.log("Radio button is selected. Form is valid.");
+        // You can proceed to submit the form if needed, e.g., form.submit();
+    }
+});
+</script>
