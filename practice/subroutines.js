@@ -435,15 +435,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // If any error message is present, prevent form submission
             const errors = document.querySelectorAll(".error");
+            let hasErrors = false;
+
             for (let i = 0; i < errors.length; i++) {
                 if (errors[i].textContent !== "") {
+                    hasErrors = true;
                     event.preventDefault();
                     submitButton.style.display = "none";
                     alert("Please correct the errors before submitting.");
                     break;
                 }
             }
-            submitButton.style.display = "block";
+            // If no errors, show the submit button
+            if (!hasErrors) {
+                submitButton.style.display = "block"; // Show submit button if all errors are cleared
+            }
         });
         // Add an input event listener to each radio button to hide the error message when a selection is made
         const radioButtons = document.getElementsByName("gender");
