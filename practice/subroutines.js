@@ -332,7 +332,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('repassword').addEventListener('input', validatePassword);
         
         // Form submission validation
-        form.addEventListener("submit", function (event) {
+        //form.addEventListener("submit", function (event) {
+        document.getElementById("validate").addEventListener("click", function (event) {
         //function validateData() {
             // Run all validations before submitting
             validateFirstName();
@@ -395,8 +396,7 @@ document.addEventListener("DOMContentLoaded", () => {
         */
 });
 
-
-
+/*
 function validateData() {
             // Run all validations before submitting
             validateFirstName();
@@ -427,8 +427,8 @@ function validateData() {
                     submitButton.style.display = "block";
                 }
             }
-        //});
         }
+*/
 
 
 
