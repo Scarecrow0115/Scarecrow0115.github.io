@@ -431,6 +431,19 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 errorMessage3.textContent = ""; // Clear error message if a selection is made
             }
+
+
+            // If any error message is present, prevent form submission
+            const errors = document.querySelectorAll(".error");
+            for (let i = 0; i < errors.length; i++) {
+                if (errors[i].textContent !== "") {
+                    event.preventDefault();
+                    alert("Please correct the errors before submitting.");
+                    break;
+                } else {
+                    submitButton.style.display = "block";
+                }
+            }
         });
         // Add an input event listener to each radio button to hide the error message when a selection is made
         const radioButtons = document.getElementsByName("gender");
@@ -456,6 +469,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 errorMessage3.style.display = "none"; // Hide error message on selection
             });
         }
+
+
+        
         //}
     // Add event listener to the "validate" button to validate fields on click
    // validateButton.addEventListener("click", validateForm);
@@ -506,20 +522,10 @@ function validateData() {
             validateUser();
             confirmPassword();
             validatePassword();
-    
-            // If any error message is present, prevent form submission
-            const errors = document.querySelectorAll(".error");
-            for (let i = 0; i < errors.length; i++) {
-                if (errors[i].textContent !== "") {
-                    event.preventDefault();
-                    alert("Please correct the errors before submitting.");
-                    break;
-                } else {
-                    submitButton.style.display = "block";
-                }
-            }
-        }
-*/
+    */
+            
+        //}
+
 
 
 
