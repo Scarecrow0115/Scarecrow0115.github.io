@@ -438,12 +438,12 @@ document.addEventListener("DOMContentLoaded", () => {
             for (let i = 0; i < errors.length; i++) {
                 if (errors[i].textContent !== "") {
                     event.preventDefault();
+                    submitButton.style.display = "none";
                     alert("Please correct the errors before submitting.");
                     break;
-                } else {
-                    submitButton.style.display = "block";
                 }
             }
+            submitButton.style.display = "block";
         });
         // Add an input event listener to each radio button to hide the error message when a selection is made
         const radioButtons = document.getElementsByName("gender");
