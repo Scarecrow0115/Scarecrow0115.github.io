@@ -334,6 +334,27 @@ document.addEventListener("DOMContentLoaded", () => {
         // Form submission validation
         //form.addEventListener("submit", function (event) {
         document.getElementById("validate").addEventListener("click", function (event) {
+            const fnameVal = document.getElementById("fname").value;
+            const minitialVal = document.getElementById("minitial").value;
+            const lnameVal = document.getElementById("lname").value;
+            const bdateVal = document.getElementById("bdate").value;
+            const ssVal = document.getElementById("ss").value;
+            const address1Val = document.getElementById("address1").value;
+            const address2Val = document.getElementById("address2").value;
+            const cityVal = document.getElementById("city").value;
+            const stateVal = document.querySelector("select[name='state']").value;
+            const zipVal = document.getElementById("zip").value;
+            const emailVal = document.getElementById("email").value.toLowerCase();
+            const phoneVal = document.getElementById("phone").value;
+            const messageVal = document.getElementById("message").value;
+            getSelectedIllnesses();
+            const genderVal = document.querySelector("input[name='gender']:checked")?.value;
+            const hasInsuranceVal = document.querySelector("input[name='ins']:checked")?.value;
+            const vaccinatedVal = document.querySelector("input[name='vac']:checked")?.value;
+            const healthVal = document.getElementById("healthslider").value;
+            const userVal = document.getElementById("user").value.toLowerCase();
+            const passwordVal = document.getElementById("password").value;
+            const repasswordVal = document.getElementById("repassword").value;
         //function validateData() {
             // Run all validations before submitting
             validateFirstName();
@@ -353,7 +374,6 @@ document.addEventListener("DOMContentLoaded", () => {
             confirmPassword();
             validatePassword();
             validateMessage();
-            getSelectedIllnesses();
 
             // Check if any radio button in the "gender" group is selected
             const radioButtons = document.getElementsByName("gender");
