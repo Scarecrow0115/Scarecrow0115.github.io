@@ -1,41 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("homework3form");
-/*
+
     // Get the "validate" button and "submit" button by their IDs
-    const validateButton = document.getElementById("validate");
+  //  const validateButton = document.getElementById("validate");
     const submitButton = document.getElementById("submit");
 
     // Initially hide the submit button
     submitButton.style.display = "none";
 
     // Function to validate form fields
-    function validateForm() {
+ //   function validateForm() {
         // Assume all fields are valid initially
-        let isValid = true;
-*/
-    function validateForm() { /*
-        const fnameVal = document.getElementById("fname").value;
-        const minitialVal = document.getElementById("minitial").value;
-        const lnameVal = document.getElementById("lname").value;
-        const bdateVal = document.getElementById("bdate").value;
-        const ssVal = document.getElementById("ss").value;
-        const address1Val = document.getElementById("address1").value;
-        const address2Val = document.getElementById("address2").value;
-        const cityVal = document.getElementById("city").value;
-        const stateVal = document.querySelector("select[name='state']").value;
-        const zipVal = document.getElementById("zip").value;
-        const emailVal = document.getElementById("email").value.toLowerCase();
-        const phoneVal = document.getElementById("phone").value;
-        const messageVal = document.getElementById("message").value;
-        getSelectedIllnesses();
-        const genderVal = document.querySelector("input[name='gender']:checked")?.value;
-        const hasInsuranceVal = document.querySelector("input[name='ins']:checked")?.value;
-        const vaccinatedVal = document.querySelector("input[name='vac']:checked")?.value;
-        const healthVal = document.getElementById("healthslider").value;
-        const userVal = document.getElementById("user").value.toLowerCase();
-        const passwordVal = document.getElementById("password").value;
-        const repasswordVal = document.getElementById("repassword").value;
-    */
+      //  let isValid = true;
+
+    
         // Individual field validation functions
         function validateFirstName() {
             const fname = document.getElementById("fname");
@@ -354,7 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('repassword').addEventListener('input', validatePassword);
         
         // Form submission validation
-        form.addEventListener("submit", function (event) {
+        form.addEventListener("validate", function (event) {
             // Run all validations before submitting
             validateFirstName();
             validateMiddleInitial();
@@ -380,13 +358,39 @@ document.addEventListener("DOMContentLoaded", () => {
                     event.preventDefault();
                     alert("Please correct the errors before submitting.");
                     break;
+                } else {
+                    submitButton.style.display = "block";
                 }
             }
         });
-    }
     // Add event listener to the "validate" button to validate fields on click
    // validateButton.addEventListener("click", validateForm);
     //};
+/*
+    function validateForm() { 
+        const fnameVal = document.getElementById("fname").value;
+        const minitialVal = document.getElementById("minitial").value;
+        const lnameVal = document.getElementById("lname").value;
+        const bdateVal = document.getElementById("bdate").value;
+        const ssVal = document.getElementById("ss").value;
+        const address1Val = document.getElementById("address1").value;
+        const address2Val = document.getElementById("address2").value;
+        const cityVal = document.getElementById("city").value;
+        const stateVal = document.querySelector("select[name='state']").value;
+        const zipVal = document.getElementById("zip").value;
+        const emailVal = document.getElementById("email").value.toLowerCase();
+        const phoneVal = document.getElementById("phone").value;
+        const messageVal = document.getElementById("message").value;
+        getSelectedIllnesses();
+        const genderVal = document.querySelector("input[name='gender']:checked")?.value;
+        const hasInsuranceVal = document.querySelector("input[name='ins']:checked")?.value;
+        const vaccinatedVal = document.querySelector("input[name='vac']:checked")?.value;
+        const healthVal = document.getElementById("healthslider").value;
+        const userVal = document.getElementById("user").value.toLowerCase();
+        const passwordVal = document.getElementById("password").value;
+        const repasswordVal = document.getElementById("repassword").value;
+        }
+        */
 });
 
 function slide(value) {
