@@ -375,7 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 errorMessage.style.display = "none"; // Hide error message if a selection is made
                 console.log("Gender selected. Form is valid.");
             }
-        });
+    
     
             // If any error message is present, prevent form submission
             const errors = document.querySelectorAll(".error");
