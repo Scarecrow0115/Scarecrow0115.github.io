@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Assume all fields are valid initially
         let isValid = true;
 */
-    function validateForm() {
+    function validateForm() { /*
         const fnameVal = document.getElementById("fname").value;
         const minitialVal = document.getElementById("minitial").value;
         const lnameVal = document.getElementById("lname").value;
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const userVal = document.getElementById("user").value.toLowerCase();
         const passwordVal = document.getElementById("password").value;
         const repasswordVal = document.getElementById("repassword").value;
-    
+    */
         // Individual field validation functions
         function validateFirstName() {
             const fname = document.getElementById("fname");
