@@ -377,16 +377,13 @@ document.addEventListener("DOMContentLoaded", () => {
             }
     
     
-            // If any error message is present, prevent form submission
-            const errors = document.querySelectorAll(".error");
-            for (let i = 0; i < errors.length; i++) {
-                if (errors[i].textContent !== "") {
-                    event.preventDefault();
-                    alert("Please correct the errors before submitting.");
-                    break;
-                } else {
-                    submitButton.style.display = "block";
-                }
+            // Display or clear the error message based on selection
+            const errorMessage = document.getElementById("genderError");
+            if (!isSelected) {
+                errorMessage.textContent = "Please select your gender."; // Show error message if none selected
+            } else {
+                errorMessage.textContent = ""; // Clear error message if a selection is made
+                console.log("Gender selected. Form is valid.");
             }
         });
         // Add an input event listener to each radio button to hide the error message when a selection is made
