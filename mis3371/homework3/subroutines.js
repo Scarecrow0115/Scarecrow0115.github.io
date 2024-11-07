@@ -9,18 +9,10 @@ Description: subroutines for patient form.
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("homework3form");
 
-    // Get the "validate" button and "submit" button by their IDs
-  //  const validateButton = document.getElementById("validate");
     const submitButton = document.getElementById("submit");
 
     // Initially hide the submit button
     submitButton.style.display = "none";
-
-    // Function to validate form fields
- //   function validateForm() {
-        // Assume all fields are valid initially
-      //  let isValid = true;
-
     
         // Individual field validation functions
         function validateFirstName() {
@@ -235,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return true; // Validation successful
         } 
             
-    
+        // Changes social security format on the fly
         document.getElementById("ss").addEventListener("input", function(event) {
           // Get the current value of the input field
           let ss = event.target.value;
@@ -306,8 +298,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 vacError.textContent = '';
             }
         
-            // Additional form validations like text inputs can go here
-        
             if (!formValid) {
                 event.preventDefault();  // Prevent form submission if validation fails
                 alert("Please correct the errors before submitting.");
@@ -339,8 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('password').addEventListener('input', confirmPassword);
         document.getElementById('repassword').addEventListener('input', validatePassword);
         
-        // Form submission validation
-        //form.addEventListener("submit", function (event) {
+        // Form validation on button click
         document.getElementById("validate").addEventListener("click", function (event) {
             const fnameVal = document.getElementById("fname").value;
             const minitialVal = document.getElementById("minitial").value;
@@ -363,8 +352,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const userVal = document.getElementById("user").value.toLowerCase();
             const passwordVal = document.getElementById("password").value;
             const repasswordVal = document.getElementById("repassword").value;
-        //function validateData() {
-            // Run all validations before submitting
+
             validateFirstName();
             validateMiddleInitial();
             validateLastName();
@@ -406,38 +394,36 @@ document.addEventListener("DOMContentLoaded", () => {
             const radioButtons2 = document.getElementsByName("ins");
             let isSelected2 = false;
         
-            // Loop through radio buttons to see if any are checked
             for (const radio of radioButtons2) {
                 if (radio.checked) {
                     isSelected2 = true;
                     break;
                 }
             }
-            // Display or clear the error message based on selection
+
             const errorMessage2 = document.getElementById("insError");
             if (!isSelected2) {
-                errorMessage2.textContent = "Please select your insurance status."; // Show error message if none selected
+                errorMessage2.textContent = "Please select your insurance status.";
             } else {
-                errorMessage2.textContent = ""; // Clear error message if a selection is made
+                errorMessage2.textContent = "";
             }
 
 
             const radioButtons3 = document.getElementsByName("vac");
             let isSelected3 = false;
         
-            // Loop through radio buttons to see if any are checked
             for (const radio of radioButtons3) {
                 if (radio.checked) {
                     isSelected3 = true;
                     break;
                 }
             }
-            // Display or clear the error message based on selection
+
             const errorMessage3 = document.getElementById("vacError");
             if (!isSelected3) {
-                errorMessage3.textContent = "Please select your vaccination status."; // Show error message if none selected
+                errorMessage3.textContent = "Please select your vaccination status."; 
             } else {
-                errorMessage3.textContent = ""; // Clear error message if a selection is made
+                errorMessage3.textContent = ""; 
             }
 
 
@@ -456,7 +442,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             // If no errors, show the submit button
             if (!hasErrors) {
-                submitButton.style.display = "block"; // Show submit button if all errors are cleared
+                submitButton.style.display = "block"; 
             }
         });
         // Add an input event listener to each radio button to hide the error message when a selection is made
@@ -472,7 +458,7 @@ document.addEventListener("DOMContentLoaded", () => {
         for (const radio of radioButtons2) {
             radio.addEventListener("input", function () {
                 const errorMessage2 = document.getElementById("insError");
-                errorMessage2.style.display = "none"; // Hide error message on selection
+                errorMessage2.style.display = "none"; 
             });
         }
 
@@ -480,75 +466,14 @@ document.addEventListener("DOMContentLoaded", () => {
         for (const radio of radioButtons3) {
             radio.addEventListener("input", function () {
                 const errorMessage3 = document.getElementById("vacError");
-                errorMessage3.style.display = "none"; // Hide error message on selection
+                errorMessage3.style.display = "none";
             });
         }
-
-
-        
-        //}
-    // Add event listener to the "validate" button to validate fields on click
-   // validateButton.addEventListener("click", validateForm);
-    //};
-/*
-    function validateForm() { 
-        const fnameVal = document.getElementById("fname").value;
-        const minitialVal = document.getElementById("minitial").value;
-        const lnameVal = document.getElementById("lname").value;
-        const bdateVal = document.getElementById("bdate").value;
-        const ssVal = document.getElementById("ss").value;
-        const address1Val = document.getElementById("address1").value;
-        const address2Val = document.getElementById("address2").value;
-        const cityVal = document.getElementById("city").value;
-        const stateVal = document.querySelector("select[name='state']").value;
-        const zipVal = document.getElementById("zip").value;
-        const emailVal = document.getElementById("email").value.toLowerCase();
-        const phoneVal = document.getElementById("phone").value;
-        const messageVal = document.getElementById("message").value;
-        getSelectedIllnesses();
-        const genderVal = document.querySelector("input[name='gender']:checked")?.value;
-        const hasInsuranceVal = document.querySelector("input[name='ins']:checked")?.value;
-        const vaccinatedVal = document.querySelector("input[name='vac']:checked")?.value;
-        const healthVal = document.getElementById("healthslider").value;
-        const userVal = document.getElementById("user").value.toLowerCase();
-        const passwordVal = document.getElementById("password").value;
-        const repasswordVal = document.getElementById("repassword").value;
-        }
-        */
 });
-
-/*
-function validateData() {
-            // Run all validations before submitting
-            validateFirstName();
-            validateMiddleInitial();
-            validateLastName();
-            validateEmail();
-            validatePhone();
-            validateDate();
-            validateSocial();
-            validateAddress1();
-            validateAddress2();
-            validateCity();
-            validateState();
-            validateZip();
-            validateHealth();
-            validateUser();
-            confirmPassword();
-            validatePassword();
-    */
-            
-        //}
-
-
-
-
+// Dynamic slider value
 function slide(value) {
       document.getElementById("health").innerHTML = value; 
     }
-
-
-
 
 
 function showReview() {
