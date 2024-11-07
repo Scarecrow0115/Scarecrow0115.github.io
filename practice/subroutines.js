@@ -372,7 +372,44 @@ document.addEventListener("DOMContentLoaded", () => {
                 errorMessage.textContent = "Please select your gender."; // Show error message if none selected
             } else {
                 errorMessage.textContent = ""; // Clear error message if a selection is made
-                console.log("Gender selected. Form is valid.");
+            }
+
+            
+            const radioButtons2 = document.getElementsByName("ins");
+            let isSelected2 = false;
+        
+            // Loop through radio buttons to see if any are checked
+            for (const radio of radioButtons2) {
+                if (radio.checked) {
+                    isSelected2 = true;
+                    break;
+                }
+            }
+            // Display or clear the error message based on selection
+            const errorMessage2 = document.getElementById("insError");
+            if (!isSelected2) {
+                errorMessage2.textContent = "Please select your insurance status."; // Show error message if none selected
+            } else {
+                errorMessage2.textContent = ""; // Clear error message if a selection is made
+            }
+
+
+            const radioButtons3 = document.getElementsByName("vac");
+            let isSelected3 = false;
+        
+            // Loop through radio buttons to see if any are checked
+            for (const radio of radioButtons3) {
+                if (radio.checked) {
+                    isSelected3 = true;
+                    break;
+                }
+            }
+            // Display or clear the error message based on selection
+            const errorMessage3 = document.getElementById("vacError");
+            if (!isSelected3) {
+                errorMessage3.textContent = "Please select your vaccination status."; // Show error message if none selected
+            } else {
+                errorMessage3.textContent = ""; // Clear error message if a selection is made
             }
         });
         // Add an input event listener to each radio button to hide the error message when a selection is made
@@ -381,6 +418,22 @@ document.addEventListener("DOMContentLoaded", () => {
             radio.addEventListener("input", function () {
                 const errorMessage = document.getElementById("genderError");
                 errorMessage.style.display = "none"; // Hide error message on selection
+            });
+        }
+
+        const radioButtons2 = document.getElementsByName("ins");
+        for (const radio of radioButtons2) {
+            radio.addEventListener("input", function () {
+                const errorMessage2 = document.getElementById("insError");
+                errorMessage2.style.display = "none"; // Hide error message on selection
+            });
+        }
+
+        const radioButtons3 = document.getElementsByName("vac");
+        for (const radio of radioButtons3) {
+            radio.addEventListener("input", function () {
+                const errorMessage3 = document.getElementById("vacError");
+                errorMessage3.style.display = "none"; // Hide error message on selection
             });
         }
         //}
