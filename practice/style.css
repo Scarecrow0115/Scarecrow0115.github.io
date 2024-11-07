@@ -84,8 +84,8 @@ a:visited {
     position: absolute;
 }
 
-.radioError {
-    color: red;  
+input[type="checkbox"] + .error {
+    color: red;
     position: absolute;
     display: none;
 }
