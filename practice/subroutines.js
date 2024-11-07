@@ -14,27 +14,27 @@ document.addEventListener("DOMContentLoaded", () => {
         let isValid = true;
 */
     function validateForm() {
-        const fname = document.getElementById("fname").value;
-        const minitial = document.getElementById("minitial").value;
-        const lname = document.getElementById("lname").value;
-        const bdate = document.getElementById("bdate").value;
-        const ss = document.getElementById("ss").value;
-        const address1 = document.getElementById("address1").value;
-        const address2 = document.getElementById("address2").value;
-        const city = document.getElementById("city").value;
-        const state = document.querySelector("select[name='state']").value;
-        const zip = document.getElementById("zip").value;
-        const email = document.getElementById("email").value.toLowerCase();
-        const phone = document.getElementById("phone").value;
-        const message = document.getElementById("message").value;
+        const fnameVal = document.getElementById("fname").value;
+        const minitialVal = document.getElementById("minitial").value;
+        const lnameVal = document.getElementById("lname").value;
+        const bdateVal = document.getElementById("bdate").value;
+        const ssVal = document.getElementById("ss").value;
+        const address1Val = document.getElementById("address1").value;
+        const address2Val = document.getElementById("address2").value;
+        const cityVal = document.getElementById("city").value;
+        const stateVal = document.querySelector("select[name='state']").value;
+        const zipVal = document.getElementById("zip").value;
+        const emailVal = document.getElementById("email").value.toLowerCase();
+        const phoneVal = document.getElementById("phone").value;
+        const messageVal = document.getElementById("message").value;
         getSelectedIllnesses();
-        const gender = document.querySelector("input[name='gender']:checked")?.value;
-        const hasInsurance = document.querySelector("input[name='ins']:checked")?.value;
-        const vaccinated = document.querySelector("input[name='vac']:checked")?.value;
-        const health = document.getElementById("healthslider").value;
-        const user = document.getElementById("user").value.toLowerCase();
-        const password = document.getElementById("password").value;
-        const repassword = document.getElementById("repassword").value;
+        const genderVal = document.querySelector("input[name='gender']:checked")?.value;
+        const hasInsuranceVal = document.querySelector("input[name='ins']:checked")?.value;
+        const vaccinatedVal = document.querySelector("input[name='vac']:checked")?.value;
+        const healthVal = document.getElementById("healthslider").value;
+        const userVal = document.getElementById("user").value.toLowerCase();
+        const passwordVal = document.getElementById("password").value;
+        const repasswordVal = document.getElementById("repassword").value;
     
         // Individual field validation functions
         function validateFirstName() {
