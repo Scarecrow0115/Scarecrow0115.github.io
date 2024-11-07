@@ -83,3 +83,9 @@ a:visited {
     color: red;  
     position: absolute;
 }
+
+.radioError {
+    color: red;  
+    position: absolute;
+    display: none;
+}
