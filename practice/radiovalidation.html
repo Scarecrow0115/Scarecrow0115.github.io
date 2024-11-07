@@ -1,29 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<form id="myForm">
-    <tr>
-        <td>Gender*:</td>
-    </tr>
-    <tr style="height:10px">
-        <td><input type="radio" id="male" name="gender" value="Male" required title="select your gender"><label for="male">Male</label></td>
-    </tr>
-    <tr style="height:10px">
-        <td><input type="radio" id="female" name="gender" value="Female" required title="select your gender"><label for="female">Female</label>
-        <div id="genderError" class="error"></div></td>
-    </tr>  
+<head>
+    <meta charset="UTF-8">
+    <title>Radio Button Validation</title>
+    <style>
+        .error {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
 
-    <!-- Validate button -->
-    <button id="validate">Validate</button>
+<form id="myForm">
+    <table>
+        <tr>
+            <td>Gender*:</td>
+        </tr>
+        <tr style="height:10px">
+            <td><input type="radio" id="male" name="gender" value="Male" title="select your gender">
+                <label for="male">Male</label>
+            </td>
+        </tr>
+        <tr style="height:10px">
+            <td><input type="radio" id="female" name="gender" value="Female" title="select your gender">
+                <label for="female">Female</label>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Error message div -->
+    <div id="genderError" class="error">Please select your gender.</div>
 </form>
+
+<!-- Validate button -->
+<button id="validate">Validate</button>
+
+</body>
+</html>
 
 <script>
     document.getElementById("validate").addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault(); // Prevent any default behavior, including form submission
 
-    // Check if any radio button in the "choice" group is selected
-    const radioButtons = document.getElementsByName("choice");
+    // Check if any radio button in the "gender" group is selected
+    const radioButtons = document.getElementsByName("gender");
     let isSelected = false;
-    
+
     // Loop through radio buttons to see if any are checked
     for (const radio of radioButtons) {
         if (radio.checked) {
@@ -32,14 +55,13 @@
         }
     }
 
-    // Display error message if none are selected
-    const errorMessage = document.getElementById("radioError");
+    // Display or hide the error message based on selection
+    const errorMessage = document.getElementById("genderError");
     if (!isSelected) {
-        errorMessage.style.display = "inline"; // Show error message
+        errorMessage.style.display = "block"; // Show error message if none selected
     } else {
-        errorMessage.style.display = "none"; // Hide error message
-        console.log("Radio button is selected. Form is valid.");
-        // You can proceed to submit the form if needed, e.g., form.submit();
+        errorMessage.style.display = "none"; // Hide error message if a selection is made
+        console.log("Gender selected. Form is valid.");
     }
 });
 </script>
