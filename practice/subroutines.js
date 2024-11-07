@@ -366,17 +366,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     break;
                 }
             }
-        
-            // Display or hide the error message based on selection
-            const errorMessage = document.getElementById("genderError");
-            if (!isSelected) {
-                errorMessage.style.display = "block"; // Show error message if none selected
-            } else {
-                errorMessage.style.display = "none"; // Hide error message if a selection is made
-                console.log("Gender selected. Form is valid.");
-            }
-    
-    
             // Display or clear the error message based on selection
             const errorMessage = document.getElementById("genderError");
             if (!isSelected) {
