@@ -2,7 +2,7 @@
 Program name: style.css
 Author: Christian Loup
 Date created: 11-04-2024
-Date last edited: 11-04-2024
+Date last edited: 11-06-2024
 Version: 1.00
 Description: style sheet for patient form.
 */
@@ -64,6 +64,7 @@ tr {
 
 td {
     width: 13%;
+    position: relative;
 }
 
 a:link {
