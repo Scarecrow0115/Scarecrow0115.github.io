@@ -165,8 +165,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function validateMessage() {
+        const message = document.getElementById("message");
+    }
+
     function validateHealth() {
         const healthslider = document.getElementById("healthslider");
+    }
+
+    function validate() {
+        const message = document.getElementById("message");
     }
 
     function validateUser() {
@@ -241,6 +249,22 @@ document.addEventListener("DOMContentLoaded", () => {
       // Set the value of the input field to the formatted SSN
       event.target.value = ss;
     });
+
+    function getSelectedIllnesses() {
+    // Select all checkboxes that have a name starting with "illness"
+    const checkboxes = document.querySelectorAll('input[type="checkbox"][name^="illness"]');
+    const selectedIllnesses = [];
+
+    // Loop through each checkbox
+    checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+            // If the checkbox is checked, add its value to the selectedIllnesses array
+            selectedIllnesses.push(checkbox.value);
+        }
+    });
+
+    return selectedIllnesses;
+}
 
     document.getElementById('homework3form').addEventListener('submit', function(event) {
         let formValid = true;
