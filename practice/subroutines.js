@@ -352,6 +352,30 @@ document.addEventListener("DOMContentLoaded", () => {
             validateUser();
             confirmPassword();
             validatePassword();
+            validateMessage();
+            getSelectedIllnesses();
+
+            // Check if any radio button in the "gender" group is selected
+            const radioButtons = document.getElementsByName("gender");
+            let isSelected = false;
+        
+            // Loop through radio buttons to see if any are checked
+            for (const radio of radioButtons) {
+                if (radio.checked) {
+                    isSelected = true;
+                    break;
+                }
+            }
+        
+            // Display or hide the error message based on selection
+            const errorMessage = document.getElementById("genderError");
+            if (!isSelected) {
+                errorMessage.style.display = "block"; // Show error message if none selected
+            } else {
+                errorMessage.style.display = "none"; // Hide error message if a selection is made
+                console.log("Gender selected. Form is valid.");
+            }
+        });
     
             // If any error message is present, prevent form submission
             const errors = document.querySelectorAll(".error");
