@@ -173,10 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const healthslider = document.getElementById("healthslider");
     }
 
-    function validate() {
-        const message = document.getElementById("message");
-    }
-
     function validateUser() {
         const user = document.getElementById("user");
         const error = document.getElementById("userError");
