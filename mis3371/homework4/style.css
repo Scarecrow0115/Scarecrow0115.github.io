@@ -11,6 +11,8 @@ body {
 }
 
 table.header {
+    position: sticky;
+    top: 0;
     color: darkred;
     text-align: center;
     font-family: Lucida Handwriting, cursive;
