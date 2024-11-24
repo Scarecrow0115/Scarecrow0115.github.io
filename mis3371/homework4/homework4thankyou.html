@@ -1,1 +1,49 @@
+<!--
+Program name: homework4thankyou.html
+Author: Christian Loup
+Date created: 11-24-2024
+Date last edited: 11-24-2024
+Version: 1.00
+Description: patient-form submit confirmation.
+-->
+<!DOCTYPE html>
+<html>
+<head> 
+<title>Thank you</title>
+<link rel="stylesheet" href="style.css">
+</head>
+    <body>
+        <div>
+            <table class="header">
+                <tbody><tr>
+                    <td><img id="logo" src="medimg.jpg" width="450" height="360"></td>
+                    <td>Music Street Medical</td>
+                    <td align="right">Today is:</td>
+                    <td id="date">10/14/2024</td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+        <br>
+        <p style="font-size:30px;">Thank you for your submission. We will be contacting you shortly.</p>
+        <br> 
 
+        <div>
+            <table class="footer">
+                <tbody><tr>
+                    <td>Music Street Medical</td>
+                    <td><a href="homework4thankyou.html">Contact Us</a></td>
+                </tr>
+                <tr>   
+                    <td>PO Box 358529</td>
+                    <td><img id="flogo" src="musicimg.jpg" width="80" height="160">
+                </td></tr>
+                <tr>
+                    <td>Memphis, TN, Music St 224195</td>
+                </tr>
+            </tbody></table>
+        </div>
+
+        <script>
+            document.getElementById("date").innerHTML = new Date().toLocaleDateString();
+        </script>
