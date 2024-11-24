@@ -3,7 +3,7 @@ Program name: homework4.html
 Author: Christian Loup
 Date created: 11-24-2024
 Date last edited: 11-24-2024
-Version: 1.00
+Version: 1.02
 Description: patient registration form.
 -->
 <!DOCTYPE html>
@@ -238,11 +238,10 @@ Description: patient registration form.
                 <tr>
                     <td><input type="reset" value="CLEAR AND START OVER"></td>
                 </tr>
-                <tr>
-                    <td><iframe src="donation.html" style="width:100%"></iframe></td>
-                </tr>
             </tbody></table>
         </form>
+
+        <iframe src="donation.html" style="width:100%"></iframe>
 
         <div id="reviewSection" style="display: none;">
             <h2>Review Your Information</h2>
@@ -257,27 +256,30 @@ Description: patient registration form.
             </table>
             <button onclick="hideReview()">Close Review</button>
         </div>
-        
-        <br>
-        <div>
-            <table class="footer">
-                <tbody><tr>
-                    <td>Music Street Medical</td>
-                    <td><a href="homework4thankyou.html">Contact Us</a></td>
-                </tr>
-                <tr>   
-                    <td>PO Box 358529</td>
-                    <td><img id="flogo" src="musicimg.jpg" width="80" height="160">
-                </td></tr>
-                <tr>
-                    <td>Memphis, TN, Music St 224195</td>
-                </tr>
+    </body>
+    <iframe src="donation.html" style="width:100%"></iframe>
+    <br>
+    <div>
+        <table class="footer">
+            <tbody><tr>
+                <td>Music Street Medical</td>
+                <td><a href="homework4thankyou.html">Contact Us</a></td>
+            </tr>
+            <tr>   
+                <td>PO Box 358529</td>
+                <td><img id="flogo" src="musicimg.jpg" width="80" height="160">
+            </td></tr>
+            <tr>
+                <td>Memphis, TN, Music St 224195</td>
+            </tr>
 
-                <script src="subroutines.js"></script>        
-            </tbody></table>
-        </div>
+            <script src="subroutines.js"></script>        
+            </tbody>
+        </table>
+    </div>
 
-        <br>
-        <script>
-            document.getElementById("date").innerHTML = new Date().toLocaleDateString();
-        </script>
+    <br>
+    <script>
+        document.getElementById("date").innerHTML = new Date().toLocaleDateString();
+    </script>
+</html>
