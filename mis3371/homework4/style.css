@@ -10,7 +10,7 @@ body {
     background-color: rgb(158, 134, 219);
 }
 
-table.header {
+.header {
     position: sticky;
     top: 0;
     z-index: 1000;
