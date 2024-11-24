@@ -3,7 +3,7 @@ Program name: homework4.html
 Author: Christian Loup
 Date created: 11-24-2024
 Date last edited: 11-24-2024
-Version: 1.04
+Version: 1.05
 Description: patient registration form.
 -->
 <!DOCTYPE html>
@@ -259,29 +259,32 @@ Description: patient registration form.
         </div>
         
         <iframe src="donation.html" style="width:100%"></iframe>
+        
+        <br>
+        
+        <div class="footer">
+            <table>
+                <tr>
+                    <td>Music Street Medical</td>
+                    <td><a href="homework4thankyou.html">Contact Us</a></td>
+                </tr>
+                <tr>   
+                    <td>PO Box 358529</td>
+                    <td><img id="flogo" src="musicimg.jpg" width="80" height="160"></td>
+                </tr>
+                <tr>
+                    <td>Memphis, TN, Music St 224195</td>
+                </tr>    
+            </table>
+        </div>
+    
+        <script src="subroutines.js"></script>    
+        
+        <br>
+        
+        <script>
+            document.getElementById("date").innerHTML = new Date().toLocaleDateString();
+        </script>
+        
     </body>
-    <br>
-    <div>
-        <table class="footer">
-            <tbody><tr>
-                <td>Music Street Medical</td>
-                <td><a href="homework4thankyou.html">Contact Us</a></td>
-            </tr>
-            <tr>   
-                <td>PO Box 358529</td>
-                <td><img id="flogo" src="musicimg.jpg" width="80" height="160">
-            </td></tr>
-            <tr>
-                <td>Memphis, TN, Music St 224195</td>
-            </tr>
-    
-            <script src="subroutines.js"></script>        
-            </tbody>
-        </table>
-    </div>
-    
-    <br>
-    <script>
-        document.getElementById("date").innerHTML = new Date().toLocaleDateString();
-    </script>
 </html>
