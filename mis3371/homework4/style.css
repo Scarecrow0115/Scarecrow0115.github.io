@@ -3,7 +3,7 @@ Program name: style.css
 Author: Christian Loup
 Date created: 11-24-2024
 Date last edited: 11-24-2024
-Version: 1.00
+Version: 1.02
 Description: style sheet for patient form.
 */
 body {
@@ -44,7 +44,11 @@ tbody.body {
     background-color: lightgray;
 }
 
-table.footer {
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: white;
     color: darkred;
     text-align: left;
     font-family: Helvetica, sans-serif;
