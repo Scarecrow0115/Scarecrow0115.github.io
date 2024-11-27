@@ -3,9 +3,13 @@ Program name: subroutines.js
 Author: Christian Loup
 Date created: 11-24-2024
 Date last edited: 11-24-2024
-Version: 1.00
+Version: 1.01
 Description: subroutines for patient form.
 */
+
+// Cookies
+document.cookie = "fname=" + document.getElementById("fname").value;
+
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("homework4form");
 
