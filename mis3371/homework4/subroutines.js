@@ -3,7 +3,7 @@ Program name: subroutines.js
 Author: Christian Loup
 Date created: 11-24-2024
 Date last edited: 11-27-2024
-Version: 1.06
+Version: 1.07
 Description: subroutines for patient form.
 */
 
@@ -33,10 +33,11 @@ function getCookie(cname) {
 
 function checkCookie() {
   let username = getCookie("username");
+  const container = document.getElementById("welcomeContainer");
   if (username != "") {
-   alert("Welcome again " + username);
+   container.innerHTML = `Welcome back ${username}`;
   } else {
-    username = prompt("Please enter your name:", "");
+    container.innerHTML = `Welcome new user`;
     if (username != "" && username != null) {
       setCookie("username", username, 365);
     }
@@ -46,6 +47,15 @@ function checkCookie() {
 function clearCookie(cname) {
   document.cookie = cname + "=; expires=Mon, 01 Jan 2024 00:00:00 UTC; path=/;";
 }
+
+function displayWelcome() {
+    const username = getCookie("username");
+    const container = document.getElementById("welcomeContainer");
+
+    if (username) {
+      container.innerHTML = `Welcome back ${username}`;
+    }
+  }
 
 function displayCheckbox() {
     const username = getCookie("username");
@@ -70,6 +80,7 @@ function displayCheckbox() {
 
   // Run displayCheckbox on page load
   window.onload = displayCheckbox;
+  window.onload = checkCookie;
 
 
 document.addEventListener("DOMContentLoaded", () => {
