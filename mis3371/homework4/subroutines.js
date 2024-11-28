@@ -3,15 +3,15 @@ Program name: subroutines.js
 Author: Christian Loup
 Date created: 11-24-2024
 Date last edited: 11-27-2024
-Version: 1.05
+Version: 1.06
 Description: subroutines for patient form.
 */
 
 // Cookie functions
-function setCookie(cname, cvalue, exdays) {
+function setCookie(cname, cvalue) {
   const d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  let expires = "expires="+ d.toUTCString();
+  d.setTime(d.getTime() + (48 * 60 * 60 * 1000)); // 48 hours in milliseconds
+  let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
@@ -64,7 +64,6 @@ function displayCheckbox() {
     const checkbox = document.getElementById("clearUser");
     if (checkbox.checked) {
       clearCookie("username");
-      alert("Cookies cleared. You are now a new user.");
       location.reload(); // Refresh the page to reflect changes
     }
   }
