@@ -3,7 +3,7 @@ Program name: subroutines.js
 Author: Christian Loup
 Date created: 11-24-2024
 Date last edited: 11-27-2024
-Version: 1.04
+Version: 1.05
 Description: subroutines for patient form.
 */
 
@@ -43,7 +43,7 @@ function checkCookie() {
   }
 }
 
-function clearCookie() {
+function clearCookie(cname) {
   document.cookie = cname + "=; expires=Mon, 01 Jan 2024 00:00:00 UTC; path=/;";
 }
 
