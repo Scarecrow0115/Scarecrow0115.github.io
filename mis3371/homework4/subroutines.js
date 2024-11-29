@@ -34,8 +34,12 @@ function getCookie(cname) {
 function checkCookie() {
   let username = getCookie("username");
   const container = document.getElementById("welcomeContainer");
+  const container2 = document.getElementById("checkboxContainer");
   if (username != "") {
-   container.innerHTML = `Welcome back ${username}`;
+    container.innerHTML = `Welcome back ${username}`;
+    container2.innerHTML = `
+        <input type="checkbox" id="clearUser" onclick="handleCheckboxClick()">
+        <label for="clearUser">${username}, click HERE to start as a NEW USER.</label>`;
   } else {
     container.innerHTML = `Welcome new user`;
     if (username != "" && username != null) {
@@ -96,7 +100,7 @@ function rememberMe(checkbox) {
 
   //window.onload = handleLogin;
   //window.onload = populateForm;
-  window.onload = displayCheckbox;
+  //window.onload = displayCheckbox;
   window.onload = checkCookie;
 
 
