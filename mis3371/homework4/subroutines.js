@@ -62,21 +62,7 @@ function clearCookie(cname) {
     }
   }
 
-function rememberMe(checkbox) {
-    if (!checkbox.checked) {
-      // Checkbox is unchecked; call your desired function
-      clearCookie("username"); // Example function to clear data
-    }
-  }
 
-  // Automatically populate the form if the "Remember Me" cookie exists
-  function populateForm() {
-    const savedUsername = getCookie("username");
-    if (savedUsername) {
-      document.getElementById("fname").value = savedUsername;
-      document.getElementById("rememberMe").checked = true; // Checkbox is checked if cookie exists
-    }
-  }
 
   window.onload = checkCookie;
 
@@ -102,6 +88,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 error.textContent = "";
                 setCookie("username", fnameVal);
             }
+        }
+
+        function rememberMe(checkbox) {
+          if (!checkbox.checked) {
+            // Checkbox is unchecked; call your desired function
+            clearCookie("username"); // Example function to clear data
+          }
         }
     
         function validateMiddleInitial() {
