@@ -69,6 +69,7 @@ function clearCookie(cname) {
         clearCookie("username"); 
       } else {
         setCookie("username", username);
+        checkCookie();
       }
     }
 
