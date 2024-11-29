@@ -79,12 +79,12 @@ function displayCheckbox() {
   }
 
 function handleLogin() {
-    const username = document.getElementById("fname").value;
+    const fname = document.getElementById("fname").value;
     const rememberMe = document.getElementById("rememberMe").checked;
 
     if (rememberMe) {
       // Save username to a cookie for 48 hours
-      setCookie("username", username, 48);
+      setCookie("username", fname);
       alert("Username saved and will be remembered for 48 hours.");
     } else {
       // Clear any existing cookies and local data
