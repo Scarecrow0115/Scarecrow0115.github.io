@@ -102,6 +102,7 @@ function handleLogin() {
     }
   }
 
+  window.onload = handleLogin;
   window.onload = populateForm;
   window.onload = displayCheckbox;
   window.onload = checkCookie;
