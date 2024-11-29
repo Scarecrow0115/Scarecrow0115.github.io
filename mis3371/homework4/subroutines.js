@@ -62,6 +62,13 @@ function clearCookie(cname) {
     }
   }
 
+    function rememberMe(checkbox) {
+      if (!checkbox.checked) {
+        // Checkbox is unchecked; call your desired function
+        clearCookie("username"); // Example function to clear data
+      }
+    }
+
 
 
   window.onload = checkCookie;
@@ -88,13 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 error.textContent = "";
                 setCookie("username", fnameVal);
             }
-        }
-
-        function rememberMe(checkbox) {
-          if (!checkbox.checked) {
-            // Checkbox is unchecked; call your desired function
-            clearCookie("username"); // Example function to clear data
-          }
         }
     
         function validateMiddleInitial() {
