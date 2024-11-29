@@ -102,7 +102,7 @@ function handleLogin() {
     }
   }
 
-  window.onload = handleLogin;
+  //window.onload = handleLogin;
   window.onload = populateForm;
   window.onload = displayCheckbox;
   window.onload = checkCookie;
@@ -119,6 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Individual field validation functions
         function validateFirstName() {
             const fname = document.getElementById("fname");
+            const fnameVal = document.getElementById("fname").value;
             const error = document.getElementById("fnameError");
             const regex = /^[A-Za-z'\-]{1,30}$/;
     
@@ -126,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 error.textContent = "Invalid first name. Only letters, apostrophes, and dashes allowed.";
             } else {
                 error.textContent = "";
+                setCookie("username", fnameVal);
             }
         }
     
