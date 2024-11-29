@@ -3,7 +3,7 @@ Program name: subroutines.js
 Author: Christian Loup
 Date created: 11-24-2024
 Date last edited: 11-28-2024
-Version: 1.08
+Version: 1.09
 Description: subroutines for patient form.
 */
 
@@ -38,8 +38,8 @@ function checkCookie() {
   if (username != "") {
     container.innerHTML = `Welcome back ${username}`;
     container2.innerHTML = `
-        <input type="checkbox" id="clearUser" onclick="handleCheckboxClick()">
-        <label for="clearUser">${username}, click HERE to start as a NEW USER.</label>`;
+        <label for="clearUser">${username}, click HERE to start as a NEW USER.</label>
+        <input type="checkbox" id="clearUser" onclick="handleCheckboxClick()">`;
     document.getElementById("fname").value = username;
   } else {
     container.innerHTML = `Welcome new user`;
