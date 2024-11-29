@@ -62,7 +62,7 @@ function clearCookie(cname) {
     }
   }
 
-    function rememberMe(checkbox) {
+    function handleRememberMe(checkbox) {
       if (!checkbox.checked) {
         // Checkbox is unchecked; call your desired function
         clearCookie("username"); // Example function to clear data
