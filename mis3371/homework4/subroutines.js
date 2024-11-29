@@ -63,12 +63,13 @@ function clearCookie(cname) {
   }
 
     function handleRememberMe(checkbox) {
-      let username = getCookie("username");
+      const fnameVal = document.getElementById("fname").value;
+      
       if (!checkbox.checked) {
         // Checkbox is unchecked
         clearCookie("username"); 
       } else {
-        setCookie("username", username);
+        setCookie("username", fnameVal);
         checkCookie();
       }
     }
