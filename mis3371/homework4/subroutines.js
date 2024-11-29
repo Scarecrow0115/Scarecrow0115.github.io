@@ -40,6 +40,7 @@ function checkCookie() {
     container2.innerHTML = `
         <input type="checkbox" id="clearUser" onclick="handleCheckboxClick()">
         <label for="clearUser">${username}, click HERE to start as a NEW USER.</label>`;
+    document.getElementById("fname").value = username;
   } else {
     container.innerHTML = `Welcome new user`;
     if (username != "" && username != null) {
@@ -51,27 +52,6 @@ function checkCookie() {
 function clearCookie(cname) {
   document.cookie = cname + "=; expires=Mon, 01 Jan 2024 00:00:00 UTC; path=/;";
 }
-/*
-function displayWelcome() {
-    const username = getCookie("username");
-    const container = document.getElementById("welcomeContainer");
-
-    if (username) {
-      container.innerHTML = `Welcome back ${username}`;
-    }
-  }
-*/
-function displayCheckbox() {
-    const username = getCookie("username");
-    const container = document.getElementById("checkboxContainer");
-
-    if (username) {
-      container.innerHTML = `
-        <input type="checkbox" id="clearUser" onclick="handleCheckboxClick()">
-        <label for="clearUser">${username}, click HERE to start as a NEW USER.</label>
-      `;
-    }
-  }
 
   // Function to handle checkbox click
   function handleCheckboxClick() {
@@ -98,9 +78,6 @@ function rememberMe(checkbox) {
     }
   }
 
-  //window.onload = handleLogin;
-  //window.onload = populateForm;
-  //window.onload = displayCheckbox;
   window.onload = checkCookie;
 
 
