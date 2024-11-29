@@ -2,8 +2,8 @@
 Program name: subroutines.js
 Author: Christian Loup
 Date created: 11-24-2024
-Date last edited: 11-27-2024
-Version: 1.07
+Date last edited: 11-28-2024
+Version: 1.08
 Description: subroutines for patient form.
 */
 
@@ -78,7 +78,31 @@ function displayCheckbox() {
     }
   }
 
-  // Run displayCheckbox on page load
+function handleLogin() {
+    const username = document.getElementById("fname").value;
+    const rememberMe = document.getElementById("rememberMe").checked;
+
+    if (rememberMe) {
+      // Save username to a cookie for 48 hours
+      setCookie("username", username, 48);
+      alert("Username saved and will be remembered for 48 hours.");
+    } else {
+      // Clear any existing cookies and local data
+      clearCookie("username");
+      alert("Local data cleared. You will not be remembered.");
+    }
+  }
+
+  // Automatically populate the form if the "Remember Me" cookie exists
+  function populateForm() {
+    const savedUsername = getCookie("username");
+    if (savedUsername) {
+      document.getElementById("fname").value = savedUsername;
+      document.getElementById("rememberMe").checked = true; // Checkbox is checked if cookie exists
+    }
+  }
+
+  window.onload = populateForm;
   window.onload = displayCheckbox;
   window.onload = checkCookie;
 
