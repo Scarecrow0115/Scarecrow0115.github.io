@@ -78,18 +78,10 @@ function displayCheckbox() {
     }
   }
 
-function handleLogin() {
-    const fname = document.getElementById("fname").value;
-    const rememberMe = document.getElementById("rememberMe").checked;
-
-    if (rememberMe) {
-      // Save username to a cookie for 48 hours
-      setCookie("username", fname);
-      alert("Username saved and will be remembered for 48 hours.");
-    } else {
-      // Clear any existing cookies and local data
-      clearCookie("username");
-      alert("Local data cleared. You will not be remembered.");
+function rememberMe(checkbox) {
+    if (!checkbox.checked) {
+      // Checkbox is unchecked; call your desired function
+      clearCookie("username"); // Example function to clear data
     }
   }
 
@@ -103,7 +95,7 @@ function handleLogin() {
   }
 
   //window.onload = handleLogin;
-  window.onload = populateForm;
+  //window.onload = populateForm;
   window.onload = displayCheckbox;
   window.onload = checkCookie;
 
