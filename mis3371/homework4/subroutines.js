@@ -30,7 +30,7 @@ function getCookie(cname) {
   }
   return "";
 }
-/*
+
 function checkCookie() {
   let username = getCookie("username");
   const container = document.getElementById("welcomeContainer");
@@ -43,7 +43,7 @@ function checkCookie() {
     }
   }
 }
-*/
+
 function clearCookie(cname) {
   document.cookie = cname + "=; expires=Mon, 01 Jan 2024 00:00:00 UTC; path=/;";
 }
